@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools Hub - 发现最棒的AI工具</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+        
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            position: relative;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .search-box button {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+        
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+        
+        .category-btn {
+            background: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .category-btn:hover, .category-btn.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .tool-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+        
+        .tool-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .tool-card p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .tool-card .tag {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            margin-right: 8px;
+            color: #666;
+        }
+        
+        .tool-card .tag.free {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .tool-card .tag.paid {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .tool-card a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .tool-card a:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: white;
+            opacity: 0.8;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin: 40px 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .stats div {
+            padding: 20px;
+        }
+        
+        .stats .number {
+            font-size: 3em;
+            font-weight: bold;
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AI Tools Hub</h1>
+            <p>发现最棒的AI工具，提升你的工作效率</p>
+        </header>
+        
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="搜索AI工具...">
+            <button onclick="searchTools()">搜索</button>
+        </div>
+        
+        <div class="stats">
+            <div>
+                <span class="number" id="toolCount">50+</span>
+                <span>精选工具</span>
+            </div>
+            <div>
+                <span class="number">12</span>
+                <span>分类</span>
+            </div>
+            <div>
+                <span class="number">100%</span>
+                <span>免费推荐</span>
+            </div>
+        </div>
+        
+        <div class="categories">
+            <button class="category-btn active" onclick="filterCategory('all')">全部</button>
+            <button class="category-btn" onclick="filterCategory('chat')">AI聊天</button>
+            <button class="category-btn" onclick="filterCategory('image')">图片生成</button>
+            <button class="category-btn" onclick="filterCategory('video')">视频编辑</button>
+            <button class="category-btn" onclick="filterCategory('code')">编程开发</button>
+            <button class="category-btn" onclick="filterCategory('writing')">写作助手</button>
+            <button class="category-btn" onclick="filterCategory('productivity')">效率工具</button>
+            <button class="category-btn" onclick="filterCategory('audio')">音频处理</button>
+        </div>
+        
+        <div class="tools-grid" id="toolsGrid">
+            <!-- 工具卡片将通过JS动态生成 -->
+        </div>
+        
+        <footer>
+            <p>© 2026 AI Tools Hub | 由 OpenClaw 驱动 🦞</p>
+        </footer>
+    </div>
+    
+    <script>
+        const tools = [
+            // AI聊天
+            { name: "ChatGPT", desc: "OpenAI的旗舰对话模型，支持多模态交互", category: "chat", price: "free", url: "https://chat.openai.com" },
+            { name: "Claude", desc: "Anthropic的AI助手，擅长长文本处理", category: "chat", price: "free", url: "https://claude.ai" },
+            { name: "Gemini", desc: "Google的AI助手，多模态能力强", category: "chat", price: "free", url: "https://gemini.google.com" },
+            { name: "Kimi", desc: "月之暗面出品，超长上下文支持", category: "chat", price: "free", url: "https://kimi.moonshot.cn" },
+            { name: "通义千问", desc: "阿里大模型，中文理解优秀", category: "chat", price: "free", url: "https://tongyi.aliyun.com" },
+            
+            // 图片生成
+            { name: "Midjourney", desc: "高质量AI图像生成，艺术风格多样", category: "image", price: "paid", url: "https://midjourney.com" },
+            { name: "DALL·E 3", desc: "OpenAI图像生成，理解力强", category: "image", price: "paid", url: "https://openai.com/dall-e-3" },
+            { name: "Stable Diffusion", desc: "开源图像生成模型，本地可部署", category: "image", price: "free", url: "https://stability.ai" },
+            { name: "Leonardo.ai", desc: "游戏和3D资产生成", category: "image", price: "free", url: "https://leonardo.ai" },
+            { name: "Remove.bg", desc: "一键抠图，自动去除背景", category: "image", price: "free", url: "https://remove.bg" },
+            
+            // 视频编辑
+            { name: "CapCut", desc: "字节跳动出品，AI剪辑功能强大", category: "video", price: "free", url: "https://www.capcut.com" },
+            { name: "Runway", desc: "AI视频生成和编辑工具", category: "video", price: "paid", url: "https://runwayml.com" },
+            { name: "Pika", desc: "文字生成视频，效果出色", category: "video", price: "free", url: "https://pika.art" },
+            { name: "HeyGen", desc: "AI数字人视频生成", category: "video", price: "paid", url: "https://heygen.com" },
+            { name: "Synthesia", desc: "企业级AI视频制作", category: "video", price: "paid", url: "https://synthesia.io" },
+            
+            // 编程开发
+            { name: "GitHub Copilot", desc: "AI代码补全，提高开发效率", category: "code", price: "paid", url: "https://github.com/features/copilot" },
+            { name: "Cursor", desc: "AI原生代码编辑器", category: "code", price: "free", url: "https://cursor.sh" },
+            { name: "Claude Code", desc: "Anthropic的代码助手", category: "code", price: "paid", url: "https://www.anthropic.com" },
+            { name: "Codeium", desc: "免费AI代码补全工具", category: "code", price: "free", url: "https://codeium.com" },
+            { name: "Tabnine", desc: "企业级AI编程助手", category: "code", price: "paid", url: "https://tabnine.com" },
+            
+            // 写作助手
+            { name: "Jasper", desc: "AI营销文案生成", category: "writing", price: "paid", url: "https://jasper.ai" },
+            { name: "Copy.ai", desc: "营销文案和邮件写作", category: "writing", price: "free", url: "https://copy.ai" },
+            { name: "Notion AI", desc: "笔记和文档智能助手", category: "writing", price: "paid", url: "https://notion.so" },
+            { name: "Grammarly", desc: "语法检查和写作优化", category: "writing", price: "free", url: "https://grammarly.com" },
+            { name: "Writesonic", desc: "SEO优化文章生成", category: "writing", price: "paid", url: "https://writesonic.com" },
+            
+            // 效率工具
+            { name: "Perplexity", desc: "AI搜索引擎，引用来源", category: "productivity", price: "free", url: "https://perplexity.ai" },
+            { name: "Otter.ai", desc: "语音转文字，会议记录", category: "productivity", price: "free", url: "https://otter.ai" },
+            { name: "Gamma", desc: "AI生成演示文稿", category: "productivity", price: "free", url: "https://gamma.app" },
+            { name: "Tome", desc: "AI故事演示工具", category: "productivity", price: "free", url: "https://tome.app" },
+            { name: "Mem.ai", desc: "AI知识管理工具", category: "productivity", price: "free", url: "https://mem.ai" },
+            
+            // 音频处理
+            { name: "ElevenLabs", desc: "AI语音合成，质量极高", category: "audio", price: "free", url: "https://elevenlabs.io" },
+            { name: "Descript", desc: "音视频编辑一体化", category: "audio", price: "paid", url: "https://descript.com" },
+            { name: "Murf", desc: "专业AI配音工具", category: "audio", price: "paid", url: "https://murf.ai" },
+            { name: "Whisper", desc: "OpenAI语音识别，开源免费", category: "audio", price: "free", url: "https://openai.com/whisper" },
+            { name: "Voicemod", desc: "AI实时变声器", category: "audio", price: "free", url: "https://voicemod.net" }
+        ];
+        
+        let currentCategory = 'all';
+        let searchTerm = '';
+        
+        function renderTools() {
+            const grid = document.getElementById('toolsGrid');
+            grid.innerHTML = '';
+            
+            const filtered = tools.filter(tool => {
+                const matchCategory = currentCategory === 'all' || tool.category === currentCategory;
+                const matchSearch = !searchTerm || 
+                    tool.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    tool.desc.toLowerCase().includes(searchTerm.toLowerCase());
+                return matchCategory && matchSearch;
+            });
+            
+            document.getElementById('toolCount').textContent = filtered.length + '+';
+            
+            filtered.forEach(tool => {
+                const card = document.createElement('div');
+                card.className = 'tool-card';
+                card.innerHTML = `
+                    <h3>${tool.name}</h3>
+                    <p>${tool.desc}</p>
+                    <span class="tag ${tool.price}">${tool.price === 'free' ? '免费' : '付费'}</span>
+                    <span class="tag">${getCategoryName(tool.category)}</span>
+                    <br>
+                    <a href="${tool.url}" target="_blank">访问官网 →</a>
+                `;
+                grid.appendChild(card);
+            });
+        }
+        
+        function getCategoryName(cat) {
+            const names = {
+                chat: 'AI聊天',
+                image: '图片生成',
+                video: '视频编辑',
+                code: '编程开发',
+                writing: '写作助手',
+                productivity: '效率工具',
+                audio: '音频处理'
+            };
+            return names[cat] || cat;
+        }
+        
+        function filterCategory(cat) {
+            currentCategory = cat;
+            
+            // 更新按钮状态
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent === '全部' && cat === 'all') {
+                    btn.classList.add('active');
+                } else if (getCategoryName(cat) === btn.textContent) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            renderTools();
+        }
+        
+        function searchTools() {
+            searchTerm = document.getElementById('searchInput').value;
+            renderTools();
+        }
+        
+        // 回车搜索
+        document.getElementById('searchInput')?.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchTools();
+            }
+        });
+        
+        // 初始化
+        renderTools();
+    </script>
+</body>
+</html>
