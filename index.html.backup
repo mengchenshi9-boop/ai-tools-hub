@@ -1416,8 +1416,7 @@
             { name: "Replicate", desc: "机器学习模型运行平台，可以运行和微调各种开源AI模型，支持API调用。", category: "code", price: "paid", url: "https://replicate.com", rating: "4.7", domain: "replicate.com", features: ["模型运行", "微调", "API调用"], hot: true },
             { name: "Hugging Face", desc: "AI模型社区，托管数万个开源模型，支持在线试用和下载部署。", category: "code", price: "free", url: "https://huggingface.co", rating: "4.8", domain: "huggingface.co", features: ["模型社区", "在线试用", "下载部署"], hot: true },
             { name: "Jasper AI", desc: "AI营销文案生成工具，适合广告和社交媒体内容，支持品牌语调自定义。", category: "writing", price: "paid", url: "https://jasper.ai", rating: "4.5", domain: "jasper.ai", features: ["营销文案", "品牌语调", "广告生成"] },
-            { name: "RunwayML", desc: "AI视频生成和编辑工具，支持文字生成视频、图片生成视频，专业级质量。", category: "video", price: "paid", url: "https://runwayml.com", rating: "4.8", domain: "runwayml.com", features: ["文字生成视频", "图片生成视频", "专业级"] },
-            { name: "Playground AI", desc: "免费AI图像生成工具，支持多种模型，包括Stable Diffusion和DALL-E。", category: "image", price: "free", url: "https://playgroundai.com", rating: "4.6", domain: "playgroundai.com", features: ["多模型支持", "SD+DALL-E", "免费使用"] }
+            { name: "RunwayML", desc: "AI视频生成和编辑工具，支持文字生成视频、图片生成视频，专业级质量。", category: "video", price: "paid", url: "https://runwayml.com", rating: "4.8", domain: "runwayml.com", features: ["文字生成视频", "图片生成视频", "专业级"] }
         ];
         
         let currentCategory = 'all';

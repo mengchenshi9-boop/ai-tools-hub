@@ -1,0 +1,11 @@
+{
+  "name": "ai-tools-hub",
+  "version": "1.0.0",
+  "description": "海梦的AI工具宝库 - 发现最好的AI工具",
+  "scripts": {
+    "start": "serve ."
+  },
+  "dependencies": {
+    "serve": "^14.0.0"
+  }
+}
