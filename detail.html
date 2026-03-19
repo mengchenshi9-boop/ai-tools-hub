@@ -926,7 +926,27 @@
                 return;
             }
             
-            // 显示/隐藏教程部分
+            
+            // 动态更新 meta 标签
+            const metaTitle = `${tool.name} - ${tool.desc.substring(0, 50)}... | 海梦的AI工具宝库`;
+            const metaDesc = `${tool.name}是一款优秀的${categoryNames[tool.category]}工具。${tool.desc}。支持${tool.features ? tool.features.join('、') : ''}等功能。${tool.price === 'free' ? '免费使用' : '付费订阅'}。`;
+            
+            document.title = metaTitle;
+            document.querySelector('meta[name="description"]').setAttribute('content', metaDesc);
+            document.querySelector('meta[property="og:title"]').setAttribute('content', metaTitle);
+            document.querySelector('meta[property="og:description"]').setAttribute('content', metaDesc);
+            document.querySelector('meta[property="og:url"]').setAttribute('content', `${window.location.href}`);
+            
+            // 添加 canonical link
+            let canonical = document.querySelector('link[rel="canonical"]');
+            if (!canonical) {
+                canonical = document.createElement('link');
+                canonical.rel = 'canonical';
+                document.head.appendChild(canonical);
+            }
+            canonical.href = window.location.href;
+            
+// 显示/隐藏教程部分
             const tutorialSection = document.getElementById('tutorialSection');
             if (tutorialSection) {
                 tutorialSection.style.display = tool.tutorial ? 'block' : 'none';
