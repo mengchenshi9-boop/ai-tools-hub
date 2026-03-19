@@ -831,6 +831,17 @@
             max-width: 1440px;
             margin: 0 auto 80px;
             padding: 0 32px;
+            display: flex;
+            gap: 30px;
+        }
+        
+        .tools-main {
+            flex: 1;
+        }
+        
+        .tools-sidebar {
+            width: 320px;
+            flex-shrink: 0;
         }
         
         .tools-grid {
@@ -1190,6 +1201,14 @@
         
         /* Responsive */
         @media (max-width: 768px) {
+            .tools-section {
+                flex-direction: column;
+            }
+            
+            .tools-sidebar {
+                width: 100%;
+            }
+            
             .hero h1 {
                 font-size: 36px;
             }
@@ -1328,37 +1347,10 @@
         </div>
     </section>
     
-    <section class="ranking-section">
-        <div class="ranking-container">
-            <div class="ranking-header">
-                <h2>🏆 每周热门榜单</h2>
-                <p>本周最受欢迎的AI工具 TOP 5</p>
-            </div>
-            <div class="ranking-list" id="rankingList">
-                <!-- 榜单将通过JS动态生成 -->
-            </div>
-        </div>
-    </section>
-    
     <section class="tools-section">
+        <div class="tools-main">
         <!-- 骨架屏加载状态 -->
         <div class="skeleton-loader" id="skeletonLoader" style="display: none;">
-            <div class="skeleton-card">
-                <div class="skeleton-header loading-shimmer"></div>
-                <div class="skeleton-body">
-                    <div class="skeleton-title loading-shimmer"></div>
-                    <div class="skeleton-desc loading-shimmer"></div>
-                    <div class="skeleton-tags loading-shimmer"></div>
-                </div>
-            </div>
-            <div class="skeleton-card">
-                <div class="skeleton-header loading-shimmer"></div>
-                <div class="skeleton-body">
-                    <div class="skeleton-title loading-shimmer"></div>
-                    <div class="skeleton-desc loading-shimmer"></div>
-                    <div class="skeleton-tags loading-shimmer"></div>
-                </div>
-            </div>
             <div class="skeleton-card">
                 <div class="skeleton-header loading-shimmer"></div>
                 <div class="skeleton-body">
@@ -1371,6 +1363,21 @@
         
         <div class="tools-grid" id="toolsGrid">
             <!-- 工具卡片将通过JS生成 -->
+        </div>
+        </div>
+        
+        <div class="tools-sidebar">
+    <section class="ranking-section">
+        <div class="ranking-container">
+            <div class="ranking-header">
+                <h2>🏆 热门榜单</h2>
+                <p>TOP 5</p>
+            </div>
+            <div class="ranking-list" id="rankingList">
+                <!-- 榜单将通过JS动态生成 -->
+            </div>
+        </div>
+    </section>
         </div>
     </section>
     
