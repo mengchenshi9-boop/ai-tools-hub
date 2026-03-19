@@ -1221,7 +1221,295 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
-    </style>
+        
+        /* 筛选区域 */
+        .filter-section {
+            background: var(--bg-white);
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid var(--border);
+            margin-bottom: 24px;
+        }
+        
+        .filter-section h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+        
+        .filter-group {
+            margin-bottom: 24px;
+        }
+        
+        .filter-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .filter-btn {
+            padding: 8px 16px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--bg-white);
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .filter-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        
+        .filter-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+        
+        .filter-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .tag-btn {
+            padding: 6px 12px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: var(--bg-white);
+            color: var(--text-secondary);
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .tag-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        
+        .tag-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+        
+        .filter-stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+        
+        #filteredCount {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        
+        .reset-btn {
+            padding: 6px 16px;
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .reset-btn:hover {
+            background: var(--border);
+            color: var(--text-primary);
+        }
+        
+        /* 视图控制 */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+        
+        .view-controls {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .view-btn {
+            padding: 8px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--bg-white);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .view-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        
+        .view-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+        
+        /* 工具对比功能 */
+        .compare-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid var(--border);
+            padding: 16px 32px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .compare-bar.active {
+            display: flex;
+        }
+        
+        .compare-items {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .compare-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: var(--bg-light);
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        
+        .compare-item-remove {
+            cursor: pointer;
+            color: var(--text-secondary);
+            font-weight: bold;
+            padding: 0 4px;
+        }
+        
+        .compare-item-remove:hover {
+            color: var(--primary);
+        }
+        
+        .compare-actions {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .compare-btn {
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .compare-btn-primary {
+            background: var(--primary);
+            color: white;
+            border: none;
+        }
+        
+        .compare-btn-primary:hover {
+            background: var(--primary-dark);
+        }
+        
+        .compare-btn-secondary {
+            background: var(--bg-light);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+        
+        .compare-btn-secondary:hover {
+            background: var(--border);
+        }
+        
+        .compare-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        /* 对比模态框 */
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .compare-table th,
+        .compare-table td {
+            border: 1px solid var(--border);
+            padding: 16px;
+            text-align: left;
+        }
+        
+        .compare-table th {
+            background: var(--bg-light);
+            font-weight: 600;
+            min-width: 150px;
+        }
+        
+        .compare-table td:first-child {
+            font-weight: 600;
+            background: var(--bg-light);
+        }
+        
+        /* 对比按钮 */
+        .add-compare-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            padding: 6px 12px;
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+        
+        .add-compare-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        
+        .add-compare-btn.added {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+
+
+    
 
     
     <!-- 结构化数据 -->
@@ -1977,5 +2265,34 @@
         renderTools();
         setTimeout(lazyLoadImages, 500); // 渲染后启动懒加载
     </script>
+
+        
+    <!-- 工具对比栏 -->
+    <div class="compare-bar" id="compareBar">
+        <div class="compare-items" id="compareItems">
+            <!-- 对比工具会动态添加到这里 -->
+        </div>
+        <div class="compare-actions">
+            <button class="compare-btn compare-btn-secondary" id="clearCompare">清空</button>
+            <button class="compare-btn compare-btn-primary" id="showCompare" disabled>对比工具 (0/4)</button>
+        </div>
+    </div>
+    
+    <!-- 对比模态框 -->
+    <div class="modal" id="compareModal">
+        <div class="modal-content" style="max-width: 1400px;">
+            <div class="modal-header">
+                <h2>🔍 工具对比</h2>
+                <button class="modal-close" onclick="closeCompareModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="compare-table" id="compareTable">
+                    <!-- 对比表格会动态生成 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
 </body>
 </html>
