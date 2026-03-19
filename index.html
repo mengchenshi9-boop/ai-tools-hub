@@ -1,50 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-
-    <!-- 性能优化：DNS预解析 -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
-    <link rel="dns-prefetch" href="//giscus.app">
-    
-    <!-- 性能优化：预连接 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- 性能优化：预加载关键资源 -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style">
-    
-    <!-- 性能优化：模块化JS -->
-    <link rel="modulepreload" href="index.html">
-    
-
     <meta charset="UTF-8">
-
-    <meta name="keywords" content="AI工具,ChatGPT,Claude,Midjourney,Stable Diffusion,AI聊天,图像生成,视频编辑,编程开发,AI助手,人工智能工具,AI工具导航,AI工具推荐">
-    <meta name="author" content="海梦">
-    <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="googlebot" content="index, follow">
-    <meta name="baiduspider" content="index, follow">
-    
-    <!-- 验证标签 -->
-    <meta name="baidu-site-verification" content="">
-    <meta name="google-site-verification" content="">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://ai-tools-hub.vercel.app/">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>海梦的AI工具宝库 - 79个精选AI工具推荐 | ChatGPT/Claude/Midjourney</title>
-    <meta name="description" content="海梦的AI工具宝库 - 收录79个精选AI工具，包括ChatGPT、Claude、Midjourney等热门工具。支持AI聊天、图像生成、视频编辑、编程开发等分类，每个工具都有详细的功能介绍和使用教程。帮助你快速找到最适合的AI工具，提升工作效率。">
+    <title>海梦的AI工具宝库 | 发现最好的AI工具</title>
+    <meta name="description" content="海梦的AI工具宝库，收录全网最热门的AI工具，包括AI聊天、图片生成、视频编辑、编程开发等50+工具，每天自动更新。帮助你找到最适合的AI助手，提升工作效率。">
+    <meta name="keywords" content="AI工具,AI聊天,ChatGPT,Claude,Midjourney,AI图片生成,AI视频编辑,AI编程助手,AI写作,效率工具">
     <meta name="author" content="海梦的AI工具宝库">
     <meta name="robots" content="index, follow">
-    
-    <!-- PWA支持 -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#667eea">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="AI工具宝库">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -1245,351 +1208,15 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
-        
-        /* 筛选区域 */
-        .filter-section {
-            background: var(--bg-white);
-            border-radius: 12px;
-            padding: 24px;
-            border: 1px solid var(--border);
-            margin-bottom: 24px;
-        }
-        
-        .filter-section h3 {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 20px;
-        }
-        
-        .filter-group {
-            margin-bottom: 24px;
-        }
-        
-        .filter-group label {
-            display: block;
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 12px;
-        }
-        
-        .filter-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        
-        .filter-btn {
-            padding: 8px 16px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            background: var(--bg-white);
-            color: var(--text-secondary);
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        
-        .filter-btn:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-        
-        .filter-btn.active {
-            background: var(--primary);
-            border-color: var(--primary);
-            color: white;
-        }
-        
-        .filter-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        
-        .tag-btn {
-            padding: 6px 12px;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            background: var(--bg-white);
-            color: var(--text-secondary);
-            font-size: 13px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        
-        .tag-btn:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-        
-        .tag-btn.active {
-            background: var(--primary);
-            border-color: var(--primary);
-            color: white;
-        }
-        
-        .filter-stats {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 16px;
-            border-top: 1px solid var(--border);
-        }
-        
-        #filteredCount {
-            font-size: 14px;
-            color: var(--text-secondary);
-        }
-        
-        .reset-btn {
-            padding: 6px 16px;
-            background: var(--bg-light);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            color: var(--text-secondary);
-            font-size: 13px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        
-        .reset-btn:hover {
-            background: var(--border);
-            color: var(--text-primary);
-        }
-        
-        /* 视图控制 */
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 24px;
-        }
-        
-        .view-controls {
-            display: flex;
-            gap: 8px;
-        }
-        
-        .view-btn {
-            padding: 8px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            background: var(--bg-white);
-            color: var(--text-secondary);
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        
-        .view-btn:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-        
-        .view-btn.active {
-            background: var(--primary);
-            border-color: var(--primary);
-            color: white;
-        }
-        
-        /* 工具对比功能 */
-        .compare-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: white;
-            border-top: 1px solid var(--border);
-            padding: 16px 32px;
-            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
-            z-index: 1000;
-            display: none;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .compare-bar.active {
-            display: flex;
-        }
-        
-        .compare-items {
-            display: flex;
-            gap: 16px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        
-        .compare-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 12px;
-            background: var(--bg-light);
-            border-radius: 8px;
-            font-size: 14px;
-        }
-        
-        .compare-item-remove {
-            cursor: pointer;
-            color: var(--text-secondary);
-            font-weight: bold;
-            padding: 0 4px;
-        }
-        
-        .compare-item-remove:hover {
-            color: var(--primary);
-        }
-        
-        .compare-actions {
-            display: flex;
-            gap: 12px;
-        }
-        
-        .compare-btn {
-            padding: 10px 24px;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        
-        .compare-btn-primary {
-            background: var(--primary);
-            color: white;
-            border: none;
-        }
-        
-        .compare-btn-primary:hover {
-            background: var(--primary-dark);
-        }
-        
-        .compare-btn-secondary {
-            background: var(--bg-light);
-            color: var(--text-primary);
-            border: 1px solid var(--border);
-        }
-        
-        .compare-btn-secondary:hover {
-            background: var(--border);
-        }
-        
-        .compare-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-        
-        /* 对比模态框 */
-        .compare-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        
-        .compare-table th,
-        .compare-table td {
-            border: 1px solid var(--border);
-            padding: 16px;
-            text-align: left;
-        }
-        
-        .compare-table th {
-            background: var(--bg-light);
-            font-weight: 600;
-            min-width: 150px;
-        }
-        
-        .compare-table td:first-child {
-            font-weight: 600;
-            background: var(--bg-light);
-        }
-        
-        /* 对比按钮 */
-        .add-compare-btn {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            padding: 6px 12px;
-            background: var(--bg-white);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            font-size: 12px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            z-index: 10;
-        }
-        
-        .add-compare-btn:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-        
-        .add-compare-btn.added {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-        
-
-
-    
-
-    
-    <!-- 结构化数据 -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "海梦的AI工具宝库",
-        "url": "https://ai-tools-hub.vercel.app",
-        "description": "收录79个精选AI工具，包括ChatGPT、Claude、Midjourney等热门工具",
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://ai-tools-hub.vercel.app/?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-        }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [{
-            "@type": "ListItem",
-            "position": 1,
-            "name": "首页",
-            "item": "https://ai-tools-hub.vercel.app"
-        }]
-    }
-    </script>
-
-
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
-            crossorigin="anonymous"></script>
-    
+    </style>
 </head>
 <body>
-
-    <!-- 页面预加载器 -->
-    <div class="page-loader" id="pageLoader">
-        <div class="page-loader-logo">🤖</div>
-        <div class="page-loader-text">海梦的AI工具宝库</div>
-        <div class="page-loader-spinner"></div>
-    </div>
-    
-
     <header>
         <div class="header-content">
             <a href="index.html" class="logo">
                 <span>🤖</span>
                 海梦的AI工具宝库
             </a>
-                <div class="language-switcher">
-                    <button class="lang-btn active" data-lang="zh">🇨🇳 中文</button>
-                    <button class="lang-btn" data-lang="en">🇺🇸 English</button>
-                </div>
             <div class="header-right">
                 <button class="theme-toggle" id="themeToggle" title="切换夜间模式">
                     <span class="theme-icon">🌙</span>
@@ -1597,11 +1224,9 @@
                 <nav>
                     <a href="index.html" class="active">首页</a>
                     <a href="#">分类</a>
-                    <a href="ranking.html">排行榜</a>
-                    <a href="submit.html">📮 提交工具</a>
-                    <a href="faq.html">❓ FAQ</a>
-                    <a href="ranking.html">🏆 排行榜</a>
-                    <a href="#" id="navBusiness">🤝 商务合作</a></nav>
+                    <a href="#">排行榜</a>
+                    <a href="#">提交工具</a>
+                </nav>
             </div>
         </div>
     </header>
@@ -1716,171 +1341,10 @@
         </div>
     </section>
     
-    <style>
-        /* 双语文本样式 */
-        .i18n-zh { display: inline; }
-        .i18n-en { display: none; }
-        
-        [lang="en"] .i18n-zh { display: none; }
-        [lang="en"] .i18n-en { display: inline; }
-        
-        /* 语言切换器 */
-        .language-switcher {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-        }
-        
-        .lang-btn {
-            padding: 8px 16px;
-            background: var(--bg-white);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .lang-btn:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-        
-        .lang-btn.active {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-        
-        /* 收藏按钮 */
-        .favorite-btn {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: var(--bg-white);
-            border: 1px solid var(--border);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            transition: all 0.3s ease;
-            z-index: 10;
-        }
-        
-        .favorite-btn:hover {
-            transform: scale(1.1);
-            border-color: #ff4757;
-        }
-        
-        .favorite-btn.active .favorite-icon {
-            animation: heartbeat 0.6s ease-in-out;
-        }
-        
-        @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.3); }
-        }
-        
-        /* 分享按钮 */
-        .share-btn {
-            position: absolute;
-            top: 12px;
-            right: 50px;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: var(--bg-white);
-            border: 1px solid var(--border);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            z-index: 10;
-        }
-        
-        .share-btn:hover {
-            transform: scale(1.1);
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-        
-        /* 收藏统计 */
-        .favorites-count {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 8px 16px;
-            background: linear-gradient(135deg, #ff4757 0%, #ff6b81 100%);
-            color: white;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .favorites-count:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255, 71, 87, 0.3);
-        }
-        
-        /* 分享菜单 */
-        .share-menu {
-            position: absolute;
-            top: 50px;
-            right: 0;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-            padding: 8px;
-            display: none;
-            z-index: 100;
-        }
-        
-        .share-menu.active {
-            display: block;
-        }
-        
-        .share-menu-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        
-        .share-menu-item:hover {
-            background: var(--bg-light);
-        }
-        
-
-
-    
-    
     <footer>
         <div class="footer-content">
             <div class="footer-logo">🤖 海梦的AI工具宝库</div>
             <p>发现、分享、使用最好的AI工具</p>
-            <div class="footer-links">
-                <a href="index.html">首页</a>
-                <span>|</span>
-                <a href="detail.html">工具详情</a>
-                <span>|</span>
-                <a href="privacy.html">隐私政策</a>
-                <span>|</span>
-                <a href="terms.html">使用条款</a>
-                <span>|</span>
-                <a href="contact.html">联系我们</a>
-            </div>
             <p style="margin-top: 20px; font-size: 14px; color: var(--text-light);">© 2026 All Rights Reserved. 由 OpenClaw 驱动 🦞</p>
         </div>
     </footer>
@@ -1888,253 +1352,72 @@
     <script>
         const tools = [
             // AI聊天
-            { name: "ChatGPT", desc: "OpenAI的旗舰对话模型，支持多模态交互，目前最强大的通用AI助手。支持文本、图像输入，能够回答问题、编写代码、分析文档等多种任务。", category: "chat", price: "free", url: "https://chat.openai.com", rating: "4.9", domain: "chat.openai.com", features: ["多模态交互", "代码编写", "文档分析"], hot: true, userRating: 4.8, userVotes: 1523,
-            tutorial: {"tips":["使用 '扮演...' 可以让ChatGPT以特定身份回答问题","添加 '逐步思考' 可以获得更详细的推理过程","上传PDF文档后可以进行摘要、问答和翻译"]}
-            }
-            { name: "Claude", desc: "Anthropic的AI助手，擅长长文本处理和代码编写，上下文理解能力出色。支持20万字长文本输入，适合文档分析和长篇写作。", category: "chat", price: "free", url: "https://claude.ai", rating: "4.8", domain: "claude.ai", features: ["长文本处理", "代码编写", "20万Token上下文"], userRating: 4.7, userVotes: 892,
-            tutorial: {"tips":["支持20万字长文档上传，适合分析完整论文或书籍","擅长代码审查和重构，可以直接粘贴项目代码","使用 '请用表格形式' 可以获得结构化输出"]}
-            }
-            { name: "Gemini", desc: "Google的AI助手，多模态能力强，与Google生态深度集成。支持实时联网搜索、Google Workspace集成，办公场景表现出色。", category: "chat", price: "free", url: "https://gemini.google.com", rating: "4.7", domain: "gemini.google.com", features: ["多模态", "实时联网", "Google生态集成"], userRating: 4.6, userVotes: 654,
-            tutorial: {"tips":["可以直接联网搜索，获取最新信息","支持分析YouTube视频内容","可以生成和编辑Google Docs文档"]}
-            }
-            { name: "Kimi", desc: "月之暗面出品，支持超长上下文（200万字），中文理解优秀。适合长文档阅读、长篇小说创作，中文对话体验极佳。", category: "chat", price: "free", url: "https://kimi.moonshot.cn", rating: "4.7", domain: "kimi.moonshot.cn", features: ["200万字上下文", "中文优化", "长文档处理"], new: true, userRating: 4.5, userVotes: 328,
-            tutorial: {"tips":["支持200万字上下文，可以分析整本小说","中文理解能力出色，适合中文写作","可以同时上传多个文档进行对比分析"]}
-            }
-            { name: "通义千问", desc: "阿里大模型，在中文理解和生成方面表现出色，企业级功能完善。支持文档解析、表格分析，适合商务场景使用。", category: "chat", price: "free", url: "https://tongyi.aliyun.com", rating: "4.6", domain: "tongyi.aliyun.com", features: ["中文理解", "文档解析", "企业级功能"], userRating: 4.4, userVotes: 421,
-            tutorial: {"tips":["支持文档解析，可以直接上传PDF、Word、Excel等格式","表格分析能力强，适合处理财务报表等数据","企业级功能完善，支持API调用和私有化部署"]}
-            }
+            { name: "ChatGPT", desc: "OpenAI的旗舰对话模型，支持多模态交互，目前最强大的通用AI助手。支持文本、图像输入，能够回答问题、编写代码、分析文档等多种任务。", category: "chat", price: "free", url: "https://chat.openai.com", rating: "4.9", domain: "chat.openai.com", hot: true, userRating: 4.8, userVotes: 1523 },
+            { name: "Claude", desc: "Anthropic的AI助手，擅长长文本处理和代码编写，上下文理解能力出色。支持20万字长文本输入，适合文档分析和长篇写作。", category: "chat", price: "free", url: "https://claude.ai", rating: "4.8", domain: "claude.ai", userRating: 4.7, userVotes: 892 },
+            { name: "Gemini", desc: "Google的AI助手，多模态能力强，与Google生态深度集成。支持实时联网搜索、Google Workspace集成，办公场景表现出色。", category: "chat", price: "free", url: "https://gemini.google.com", rating: "4.7", domain: "gemini.google.com", userRating: 4.6, userVotes: 654 },
+            { name: "Kimi", desc: "月之暗面出品，支持超长上下文（200万字），中文理解优秀。适合长文档阅读、长篇小说创作，中文对话体验极佳。", category: "chat", price: "free", url: "https://kimi.moonshot.cn", rating: "4.7", domain: "kimi.moonshot.cn", new: true, userRating: 4.5, userVotes: 328 },
+            { name: "通义千问", desc: "阿里大模型，在中文理解和生成方面表现出色，企业级功能完善。支持文档解析、表格分析，适合商务场景使用。", category: "chat", price: "free", url: "https://tongyi.aliyun.com", rating: "4.6", domain: "tongyi.aliyun.com", userRating: 4.4, userVotes: 421 },
             
             // 图片生成
-            { name: "Midjourney", desc: "高质量AI图像生成，艺术风格多样，适合创意设计和艺术创作。在Discord运行，社区活跃，最新版本支持图片编辑和文字转图片。", category: "image", price: "paid", url: "https://midjourney.com", rating: "4.9", domain: "midjourney.com", features: ["艺术风格", "图片编辑", "社区活跃"], hot: true,
-            tutorial: {"tips":["使用 '--ar 16:9' 指定图片宽高比","添加 '--v 6' 使用最新版本模型","使用 '--style raw' 获得更原始的艺术效果"]}
-            }
-            { name: "DALL·E 3", desc: "OpenAI图像生成，对提示词理解力强，生成效果稳定。集成在ChatGPT Plus中，使用简单，支持自然语言描述生成图片。", category: "image", price: "paid", url: "https://openai.com/dall-e-3", rating: "4.8", domain: "openai.com", features: ["自然语言描述", "效果稳定", "ChatGPT集成"],
-            tutorial: {"tips":["通过ChatGPT使用，可以直接用自然语言描述图片","支持对已生成图片进行局部修改","可以生成四张图片供选择"]}
-            }
-            { name: "Stable Diffusion", desc: "开源图像生成模型，本地可部署，社区生态丰富。支持自定义模型训练，可以生成各种风格的图像，完全免费使用。", category: "image", price: "free", url: "https://stability.ai", rating: "4.7", domain: "stability.ai", features: ["本地部署", "自定义模型", "完全免费"],
-            tutorial: {"tips":["使用 ControlNet 可以精确控制人物姿态","通过 LoRA 训练可以生成特定风格","本地部署需要较好的显卡（至少8GB显存）"]}
-            }
-            { name: "Leonardo.ai", desc: "游戏和3D资产生成，提供多种预设风格，适合游戏开发者。支持游戏资产生成、3D模型创建，为游戏开发提供AI辅助。", category: "image", price: "free", url: "https://leonardo.ai", rating: "4.6", domain: "leonardo.ai", features: ["游戏资产生成", "3D模型", "AI辅助"],
-            tutorial: {"tips":["游戏资产生成速度极快，适合批量生产","提供多种游戏风格预设，可直接用于3D建模","支持自定义模型训练，打造专属风格"]}
-            }
-            { name: "Remove.bg", desc: "一键抠图，自动去除背景，处理速度极快。支持批量处理，API接口完善，适合电商、设计等需要快速抠图的场景。", category: "image", price: "free", url: "https://remove.bg", rating: "4.8", domain: "remove.bg", features: ["一键抠图", "批量处理", "API接口"],
-            tutorial: {"tips":["支持批量处理，可以一次性去除多张图片背景","API接口完善，适合电商平台自动化处理","处理速度极快，1秒内完成单张图片"]}
-            }
+            { name: "Midjourney", desc: "高质量AI图像生成，艺术风格多样，适合创意设计和艺术创作。在Discord运行，社区活跃，最新版本支持图片编辑和文字转图片。", category: "image", price: "paid", url: "https://midjourney.com", rating: "4.9", domain: "midjourney.com", hot: true },
+            { name: "DALL·E 3", desc: "OpenAI图像生成，对提示词理解力强，生成效果稳定。集成在ChatGPT Plus中，使用简单，支持自然语言描述生成图片。", category: "image", price: "paid", url: "https://openai.com/dall-e-3", rating: "4.8", domain: "openai.com" },
+            { name: "Stable Diffusion", desc: "开源图像生成模型，本地可部署，社区生态丰富。支持自定义模型训练，可以生成各种风格的图像，完全免费使用。", category: "image", price: "free", url: "https://stability.ai", rating: "4.7", domain: "stability.ai" },
+            { name: "Leonardo.ai", desc: "游戏和3D资产生成，提供多种预设风格，适合游戏开发者。支持游戏资产生成、3D模型创建，为游戏开发提供AI辅助。", category: "image", price: "free", url: "https://leonardo.ai", rating: "4.6", domain: "leonardo.ai" },
+            { name: "Remove.bg", desc: "一键抠图，自动去除背景，处理速度极快。支持批量处理，API接口完善，适合电商、设计等需要快速抠图的场景。", category: "image", price: "free", url: "https://remove.bg", rating: "4.8", domain: "remove.bg" },
             
             // 视频编辑
-            { name: "CapCut", desc: "字节跳动出品，AI剪辑功能强大，自动字幕和特效。支持智能剪辑、自动生成字幕、AI配音，手机端和PC端全平台支持。", category: "video", price: "free", url: "https://www.capcut.com", rating: "4.8", domain: "capcut.com", features: ["AI剪辑", "自动字幕", "多平台支持"], hot: true,
-            tutorial: {"tips":["使用 'AI字幕' 自动生成多语言字幕","智能剪辑可以自动识别精彩片段","支持手机和云编辑，随时随地都可以制作"]}
-            }
-            { name: "Runway", desc: "AI视频生成和编辑工具，Gen-3模型效果惊艳。支持文字生成视频、图片生成视频、视频风格转换，专业级视频AI工具。", category: "video", price: "paid", url: "https://runwayml.com", rating: "4.9", domain: "runwayml.com", features: ["文字生成视频", "风格转换", "专业级"],
-            tutorial: {"tips":["使用 'Text to Video' 可以从文字生成视频","'Image to Video' 可以让静态图片动起来","支持帧率调整和分辨率优化"]}
-            }
-            { name: "Pika", desc: "文字生成视频，效果出色，支持多种视频风格。操作简单，适合短视频创作者快速生成视频内容。", category: "video", price: "free", url: "https://pika.art", rating: "4.7", domain: "pika.art", features: ["文字生成视频", "多种风格", "操作简单"],
-            tutorial: {"tips":["支持参考图片，可以保持人物和场景一致性","提供多种预设风格，快速生成不同风格视频","操作界面简单，新手也能快速上手"]}
-            }
-            { name: "HeyGen", desc: "AI数字人视频生成，支持多语言口型同步。适合企业培训、产品介绍等场景，生成的数字人自然逼真。", category: "video", price: "paid", url: "https://heygen.com", rating: "4.6", domain: "heygen.com", features: ["数字人", "多语言口型", "自然逼真"],
-            tutorial: {"tips":["支持自定义数字人形象，可以克隆真实人物","多语言口型同步准确，适合跨国企业培训","提供丰富的数字人模板，快速生成视频"]}
-            }
-            { name: "Synthesia", desc: "企业级AI视频制作，数字人演示和培训视频。支持140+种语言和音色，适合跨国企业制作培训视频。", category: "video", price: "paid", url: "https://synthesia.io", rating: "4.5", domain: "synthesia.io", features: ["140+语言", "企业培训", "数字人演示"],
-            tutorial: {"tips":["支持140+语言和音色，覆盖全球主要语言","可以自定义数字人形象和服装","提供企业级解决方案，支持批量生成"]}
-            }
+            { name: "CapCut", desc: "字节跳动出品，AI剪辑功能强大，自动字幕和特效。支持智能剪辑、自动生成字幕、AI配音，手机端和PC端全平台支持。", category: "video", price: "free", url: "https://www.capcut.com", rating: "4.8", domain: "capcut.com", hot: true },
+            { name: "Runway", desc: "AI视频生成和编辑工具，Gen-3模型效果惊艳。支持文字生成视频、图片生成视频、视频风格转换，专业级视频AI工具。", category: "video", price: "paid", url: "https://runwayml.com", rating: "4.9", domain: "runwayml.com" },
+            { name: "Pika", desc: "文字生成视频，效果出色，支持多种视频风格。操作简单，适合短视频创作者快速生成视频内容。", category: "video", price: "free", url: "https://pika.art", rating: "4.7", domain: "pika.art" },
+            { name: "HeyGen", desc: "AI数字人视频生成，支持多语言口型同步。适合企业培训、产品介绍等场景，生成的数字人自然逼真。", category: "video", price: "paid", url: "https://heygen.com", rating: "4.6", domain: "heygen.com" },
+            { name: "Synthesia", desc: "企业级AI视频制作，数字人演示和培训视频。支持140+种语言和音色，适合跨国企业制作培训视频。", category: "video", price: "paid", url: "https://synthesia.io", rating: "4.5", domain: "synthesia.io" },
             
             // 编程开发
-            { name: "GitHub Copilot", desc: "AI代码补全，提高开发效率，支持多种编程语言。集成在IDE中，实时建议代码，支持代码重构、文档生成等功能。", category: "code", price: "paid", url: "https://github.com/features/copilot", rating: "4.8", domain: "github.com", features: ["代码补全", "IDE集成", "代码重构"], hot: true,
-            tutorial: {"tips":["在代码注释中描述功能，可以生成完整代码","Tab键接受建议，Ctrl+Enter拒绝建议","支持多行代码补全，适合生成函数"]}
-            }
-            { name: "Cursor", desc: "AI原生代码编辑器，集成Claude和GPT，代码生成能力强。支持自然语言修改代码、调试、重构，是当前最流行的AI编程工具。", category: "code", price: "free", url: "https://cursor.sh", rating: "4.9", domain: "cursor.sh", features: ["自然语言编程", "调试", "智能补全"], new: true,
-            tutorial: {"tips":["使用 Command+K (Mac) 或 Ctrl+K (Win) 快速生成代码","支持多文件编辑，可以同时修改整个项目","内置终端可以直接运行生成的代码"]}
-            }
-            { name: "Claude Code", desc: "Anthropic的代码助手，擅长复杂代码理解和重构。支持项目级代码分析、测试生成，适合大型项目开发。", category: "code", price: "paid", url: "https://www.anthropic.com", rating: "4.7", domain: "anthropic.com", features: ["项目级分析", "测试生成", "代码重构"],
-            tutorial: {"tips":["支持项目级代码分析，可以理解整个代码库","擅长重构复杂代码，提高代码质量","可以自动生成单元测试"]}
-            }
-            { name: "Codeium", desc: "免费AI代码补全工具，响应速度快，隐私保护好。支持70+种编程语言，个人使用完全免费。", category: "code", price: "free", url: "https://codeium.com", rating: "4.6", domain: "codeium.com", features: ["免费使用", "70+语言", "隐私保护"],
-            tutorial: {"tips":["支持70+编程语言，几乎覆盖所有主流语言","个人使用完全免费，不限代码量","隐私保护好，代码不上传到云端"]}
-            }
-            { name: "Tabnine", desc: "企业级AI编程助手，支持私有代码库训练。支持自定义模型训练，保护企业代码隐私，适合大型企业使用。", category: "code", price: "paid", url: "https://tabnine.com", rating: "4.5", domain: "tabnine.com", features: ["私有模型训练", "企业级", "代码安全"],
-            tutorial: {"tips":["支持私有代码库训练，保护企业机密","可以学习团队代码风格，保持一致性","提供企业级管理和审计功能"]}
-            }
+            { name: "GitHub Copilot", desc: "AI代码补全，提高开发效率，支持多种编程语言。集成在IDE中，实时建议代码，支持代码重构、文档生成等功能。", category: "code", price: "paid", url: "https://github.com/features/copilot", rating: "4.8", domain: "github.com", hot: true },
+            { name: "Cursor", desc: "AI原生代码编辑器，集成Claude和GPT，代码生成能力强。支持自然语言修改代码、调试、重构，是当前最流行的AI编程工具。", category: "code", price: "free", url: "https://cursor.sh", rating: "4.9", domain: "cursor.sh", new: true },
+            { name: "Claude Code", desc: "Anthropic的代码助手，擅长复杂代码理解和重构。支持项目级代码分析、测试生成，适合大型项目开发。", category: "code", price: "paid", url: "https://www.anthropic.com", rating: "4.7", domain: "anthropic.com" },
+            { name: "Codeium", desc: "免费AI代码补全工具，响应速度快，隐私保护好。支持70+种编程语言，个人使用完全免费。", category: "code", price: "free", url: "https://codeium.com", rating: "4.6", domain: "codeium.com" },
+            { name: "Tabnine", desc: "企业级AI编程助手，支持私有代码库训练。支持自定义模型训练，保护企业代码隐私，适合大型企业使用。", category: "code", price: "paid", url: "https://tabnine.com", rating: "4.5", domain: "tabnine.com" },
             
             // 写作助手
-            { name: "Jasper", desc: "AI营销文案生成，适合广告和社交媒体内容。提供多种营销文案模板，支持品牌语调自定义，适合营销团队使用。", category: "writing", price: "paid", url: "https://jasper.ai", rating: "4.7", domain: "jasper.ai", features: ["营销文案", "模板丰富", "品牌语调"],
-            tutorial: {"tips":["提供多种营销文案模板，涵盖各种场景","支持品牌语调训练，保持内容一致性","内置SEO优化建议，提升文章排名"]}
-            }
-            { name: "Copy.ai", desc: "营销文案和邮件写作，模板丰富，上手简单。支持90+种语言，提供博客文章、社交媒体内容等多种文案类型。", category: "writing", price: "free", url: "https://copy.ai", rating: "4.6", domain: "copy.ai", features: ["90+语言", "社交媒体", "博客文章"],
-            tutorial: {"tips":["支持90+种语言，适合国际化内容创作","提供丰富的社交媒体模板，快速生成内容","免费版本功能强大，个人用户足够使用"]}
-            }
-            { name: "Notion AI", desc: "笔记和文档智能助手，与Notion深度集成。支持文档写作、会议总结、表格分析，是Notion用户的理想选择。", category: "writing", price: "paid", url: "https://notion.so", rating: "4.5", domain: "notion.so", features: ["文档写作", "会议总结", "表格分析"],
-            tutorial: {"tips":["选中文本后按 Space 键可以快速改写","可以自动总结长文档","支持翻译成多种语言"]}
-            }
-            { name: "Grammarly", desc: "语法检查和写作优化，支持多种英语变体。支持实时写作建议，适合英语写作和非母语用户使用。", category: "writing", price: "free", url: "https://grammarly.com", rating: "4.8", domain: "grammarly.com", features: ["语法检查", "写作优化", "英语变体"],
-            tutorial: {"tips":["支持实时写作建议，边写边改","检测语法、拼写、标点等多种错误","提供风格和语调建议，优化表达方式"]}
-            }
-            { name: "Writesonic", desc: "SEO优化文章生成，支持长文和博客写作。提供SEO优化建议，帮助文章获得更好的搜索排名。", category: "writing", price: "paid", url: "https://writesonic.com", rating: "4.4", domain: "writesonic.com", features: ["SEO优化", "长文生成", "博客写作"],
-            tutorial: {"tips":["内置SEO优化工具，提高文章搜索排名","支持长文写作，可生成3000+字文章","提供A/B测试功能，优化转化率"]}
-            }
+            { name: "Jasper", desc: "AI营销文案生成，适合广告和社交媒体内容。提供多种营销文案模板，支持品牌语调自定义，适合营销团队使用。", category: "writing", price: "paid", url: "https://jasper.ai", rating: "4.7", domain: "jasper.ai" },
+            { name: "Copy.ai", desc: "营销文案和邮件写作，模板丰富，上手简单。支持90+种语言，提供博客文章、社交媒体内容等多种文案类型。", category: "writing", price: "free", url: "https://copy.ai", rating: "4.6", domain: "copy.ai" },
+            { name: "Notion AI", desc: "笔记和文档智能助手，与Notion深度集成。支持文档写作、会议总结、表格分析，是Notion用户的理想选择。", category: "writing", price: "paid", url: "https://notion.so", rating: "4.5", domain: "notion.so" },
+            { name: "Grammarly", desc: "语法检查和写作优化，支持多种英语变体。支持实时写作建议，适合英语写作和非母语用户使用。", category: "writing", price: "free", url: "https://grammarly.com", rating: "4.8", domain: "grammarly.com" },
+            { name: "Writesonic", desc: "SEO优化文章生成，支持长文和博客写作。提供SEO优化建议，帮助文章获得更好的搜索排名。", category: "writing", price: "paid", url: "https://writesonic.com", rating: "4.4", domain: "writesonic.com" },
             
             // 效率工具
-            { name: "Perplexity", desc: "AI搜索引擎，引用来源，适合研究和信息查询。提供准确的答案和来源链接，是学习和研究的好帮手。", category: "productivity", price: "free", url: "https://perplexity.ai", rating: "4.8", domain: "perplexity.ai", features: ["AI搜索", "引用来源", "研究工具"], hot: true,
-            tutorial: {"tips":["所有答案都会引用来源，可以直接查看原始资料","使用 'Focus' 模式可以限定搜索范围","可以保存搜索结果到个人知识库"]}
-            }
-            { name: "Otter.ai", desc: "语音转文字，会议记录，实时转录准确率高。支持多语言识别，自动生成会议摘要和要点。", category: "productivity", price: "free", url: "https://otter.ai", rating: "4.6", domain: "otter.ai", features: ["语音转文字", "会议记录", "多语言"],
-            tutorial: {"tips":["实时转录会议，无需等待会议结束","支持多语言识别，包括中英文","自动生成会议摘要和关键词"]}
-            }
-            { name: "Gamma", desc: "AI生成演示文稿，设计美观，协作功能完善。支持文本生成PPT，提供多种精美模板，适合商务演示。", category: "productivity", price: "free", url: "https://gamma.app", rating: "4.7", domain: "gamma.app", features: ["AI生成PPT", "设计美观", "协作功能"],
-            tutorial: {"tips":["输入文档或大纲可以一键生成PPT","支持AI生成图表和配图","可以实时协作编辑"]}
-            }
-            { name: "Tome", desc: "AI故事演示工具，适合创意展示和 pitch deck。自动生成故事板，支持实时协作，适合创业者和创意工作者。", category: "productivity", price: "free", url: "https://tome.app", rating: "4.5", domain: "tome.app", features: ["故事演示", "实时协作", "Pitch Deck"],
-            tutorial: {"tips":["自动生成故事板，展示创业想法","提供丰富的模板和设计元素","支持实时协作，团队共同编辑"]}
-            }
-            { name: "Mem.ai", desc: "AI知识管理工具，自动组织和关联笔记。智能整理信息，帮助构建个人知识库，适合知识工作者。", category: "productivity", price: "free", url: "https://mem.ai", rating: "4.4", domain: "mem.ai", features: ["知识管理", "自动整理", "笔记关联"],
-            tutorial: {"tips":["智能整理笔记，自动关联相关信息","支持全文搜索，快速找到所需内容","可以导入Evernote、Notion等笔记"]}
-            }
+            { name: "Perplexity", desc: "AI搜索引擎，引用来源，适合研究和信息查询。提供准确的答案和来源链接，是学习和研究的好帮手。", category: "productivity", price: "free", url: "https://perplexity.ai", rating: "4.8", domain: "perplexity.ai", hot: true },
+            { name: "Otter.ai", desc: "语音转文字，会议记录，实时转录准确率高。支持多语言识别，自动生成会议摘要和要点。", category: "productivity", price: "free", url: "https://otter.ai", rating: "4.6", domain: "otter.ai" },
+            { name: "Gamma", desc: "AI生成演示文稿，设计美观，协作功能完善。支持文本生成PPT，提供多种精美模板，适合商务演示。", category: "productivity", price: "free", url: "https://gamma.app", rating: "4.7", domain: "gamma.app" },
+            { name: "Tome", desc: "AI故事演示工具，适合创意展示和 pitch deck。自动生成故事板，支持实时协作，适合创业者和创意工作者。", category: "productivity", price: "free", url: "https://tome.app", rating: "4.5", domain: "tome.app" },
+            { name: "Mem.ai", desc: "AI知识管理工具，自动组织和关联笔记。智能整理信息，帮助构建个人知识库，适合知识工作者。", category: "productivity", price: "free", url: "https://mem.ai", rating: "4.4", domain: "mem.ai" },
             
             // 音频处理
-            { name: "ElevenLabs", desc: "AI语音合成，质量极高，支持多种语言和情感。生成的语音自然逼真，几乎听不出是AI合成的。", category: "audio", price: "free", url: "https://elevenlabs.io", rating: "4.9", domain: "elevenlabs.io", features: ["语音合成", "多语言", "情感语音"], hot: true,
-            tutorial: {"tips":["可以克隆自己的声音用于配音","支持多种情感语调（开心、悲伤、愤怒等）","生成速度极快，几乎实时输出"]}
-            }
-            { name: "Descript", desc: "音视频编辑一体化，文字编辑视频，功能强大。像编辑文档一样编辑视频，支持多轨道编辑和实时协作。", category: "audio", price: "paid", url: "https://descript.com", rating: "4.7", domain: "descript.com", features: ["文字编辑视频", "多轨道", "实时协作"],
-            tutorial: {"tips":["像编辑文档一样编辑视频，操作直观","支持多轨道编辑，专业级功能","内置降噪和音频处理功能"]}
-            }
-            { name: "Murf", desc: "专业AI配音工具，适合视频配音和有声书。提供120+种AI语音，支持多种情感和语调。", category: "audio", price: "paid", url: "https://murf.ai", rating: "4.5", domain: "murf.ai", features: ["120+语音", "情感语调", "专业配音"],
-            tutorial: {"tips":["提供120+种AI语音，覆盖全球口音","支持多种情感和语调，语音更自然","适合视频配音、有声书、广告等多种场景"]}
-            }
-            { name: "Whisper", desc: "OpenAI语音识别，开源免费，准确率高。支持多语言识别，适合字幕制作和会议记录。", category: "audio", price: "free", url: "https://openai.com/whisper", rating: "4.8", domain: "openai.com", features: ["语音识别", "多语言", "开源免费"],
-            tutorial: {"tips":["开源免费，可以本地部署","支持多语言识别，准确率高达95%","提供Python API，方便集成到应用"]}
-            }
-            { name: "Voicemod", desc: "AI实时变声器，适合游戏和直播。提供多种声音效果，支持实时语音转换。", category: "audio", price: "free", url: "https://voicemod.net", rating: "4.3", domain: "voicemod.net", features: ["实时变声", "游戏直播", "多种效果"],
-            tutorial: {"tips":["实时变声，适合游戏和直播","提供多种声音效果，包括机器人、怪兽等","与Discord、Steam等平台深度集成"]}
-            }
+            { name: "ElevenLabs", desc: "AI语音合成，质量极高，支持多种语言和情感。生成的语音自然逼真，几乎听不出是AI合成的。", category: "audio", price: "free", url: "https://elevenlabs.io", rating: "4.9", domain: "elevenlabs.io", hot: true },
+            { name: "Descript", desc: "音视频编辑一体化，文字编辑视频，功能强大。像编辑文档一样编辑视频，支持多轨道编辑和实时协作。", category: "audio", price: "paid", url: "https://descript.com", rating: "4.7", domain: "descript.com" },
+            { name: "Murf", desc: "专业AI配音工具，适合视频配音和有声书。提供120+种AI语音，支持多种情感和语调。", category: "audio", price: "paid", url: "https://murf.ai", rating: "4.5", domain: "murf.ai" },
+            { name: "Whisper", desc: "OpenAI语音识别，开源免费，准确率高。支持多语言识别，适合字幕制作和会议记录。", category: "audio", price: "free", url: "https://openai.com/whisper", rating: "4.8", domain: "openai.com" },
+            { name: "Voicemod", desc: "AI实时变声器，适合游戏和直播。提供多种声音效果，支持实时语音转换。", category: "audio", price: "free", url: "https://voicemod.net", rating: "4.3", domain: "voicemod.net" },
             
             // 设计工具
-            { name: "Canva AI", desc: "AI设计工具，海报、logo、社交媒体图一键生成。适合非设计师快速制作专业设计作品。", category: "design", price: "free", url: "https://canva.com", rating: "4.8", domain: "canva.com", features: ["海报生成", "logo设计", "社交媒体"],
-            tutorial: {"tips":["适合非设计师，无需专业设计技能","提供海量模板和素材库","支持团队协作，实时编辑设计"]}
-            }
-            { name: "Figma AI", desc: "设计协作工具，AI辅助设计建议。支持实时协作，AI帮助自动布局和配色。", category: "design", price: "free", url: "https://figma.com", rating: "4.9", domain: "figma.com", features: ["设计协作", "自动布局", "配色建议"] },
-            { name: "Adobe Firefly", desc: "Adobe AI创意工具，与Creative Cloud集成。支持文字生成图像、图像扩展等多种功能。", category: "design", price: "free", url: "https://firefly.adobe.com", rating: "4.6", domain: "adobe.com", features: ["文字生图", "图像扩展", "Creative Cloud"],
-            tutorial: {"tips":["与Photoshop、Illustrator等软件无缝集成","支持矢量图像生成，可无限放大","文字生图效果出色，适合广告创意"]}
-            }
+            { name: "Canva AI", desc: "AI设计工具，海报、logo、社交媒体图一键生成。适合非设计师快速制作专业设计作品。", category: "design", price: "free", url: "https://canva.com", rating: "4.8", domain: "canva.com" },
+            { name: "Figma AI", desc: "设计协作工具，AI辅助设计建议。支持实时协作，AI帮助自动布局和配色。", category: "design", price: "free", url: "https://figma.com", rating: "4.9", domain: "figma.com" },
+            { name: "Adobe Firefly", desc: "Adobe AI创意工具，与Creative Cloud集成。支持文字生成图像、图像扩展等多种功能。", category: "design", price: "free", url: "https://firefly.adobe.com", rating: "4.6", domain: "adobe.com" },
             
             // 商业办公
-            { name: "Microsoft Copilot", desc: "Office 365 AI助手，Word、Excel、PPT智能化。集成在Office中，帮助提高办公效率。", category: "business", price: "paid", url: "https://copilot.microsoft.com", rating: "4.5", domain: "microsoft.com", features: ["Office集成", "智能化", "办公效率"],
-            tutorial: {"tips":["在Word中自动生成文档大纲","Excel中可以自然语言生成公式","PPT中一键设计幻灯片"]}
-            }
-            { name: "Google Duet AI", desc: "Google Workspace AI助手，Gmail、Docs智能化。帮助自动撰写邮件、总结文档等。", category: "business", price: "paid", url: "https://workspace.google.com", rating: "4.4", domain: "google.com", features: ["Gmail智能化", "Docs智能化", "Workspace"],
-            tutorial: {"tips":["在Gmail中自动撰写邮件","Docs中智能总结长文档","Sheets中自动分析数据"]}
-            }
-            { name: "Sunshine AI", desc: "AI情绪陪伴助手，提供心理健康支持和情感交流，24小时在线陪伴。", category: "chat", price: "free", url: "https://sunshine.ai", rating: "4.4", domain: "sunshine.ai", features: ["情绪陪伴", "心理健康", "24小时"],
-            tutorial: {"tips":["24小时在线陪伴，随时聊天","支持情感识别，回应更贴心","保护隐私，对话安全加密"]}
-            }
-            { name: "Character.AI", desc: "与AI角色对话，创建自己的AI角色，支持多种 personality 和场景。", category: "chat", price: "free", url: "https://character.ai", rating: "4.5", domain: "character.ai", features: ["角色对话", "创建AI角色", "多种场景"],
-            tutorial: {"tips":["可以创建自己的AI角色，定制性格","支持多种场景对话，包括游戏、学习","社区活跃，有大量公开角色可玩"]}
-            }
-            { name: "Midjourney Discord", desc: "通过Discord使用的AI图像生成工具，社区活跃，每月发布新功能。", category: "image", price: "paid", url: "https://midjourney.com", rating: "4.9", domain: "midjourney.com", features: ["Discord集成", "社区活跃", "持续更新"],
-            tutorial: {"tips":["在Discord中使用，社区互动性强","每月发布新功能，持续更新","可以学习其他用户的创作技巧"]}
-            }
-            { name: "Perplexity AI", desc: "AI搜索引擎，提供准确的答案和引用来源，适合学习和研究。", category: "productivity", price: "free", url: "https://perplexity.ai", rating: "4.7", domain: "perplexity.ai", features: ["引用来源", "准确答案", "研究工具"],
-            tutorial: {"tips":["所有答案都有引用来源，可验证","支持深入模式，提供更详细的分析","可以保存搜索结果到个人知识库"]}
-            }
-            { name: "AutoGPT", desc: "自主运行的AI代理，能够自动分解任务并执行，无需人工干预。适合自动化工作流程。", category: "productivity", price: "free", url: "https://autogpt.net", rating: "4.6", domain: "autogpt.net", features: ["自主任务分解", "无需人工干预", "自动化工作流"], hot: true,
-            tutorial: {"tips":["可以自动完成复杂任务链","无需人工干预，自主决策","适合自动化重复性工作"]}
-            }
-            { name: "Replicate", desc: "机器学习模型运行平台，可以运行和微调各种开源AI模型，支持API调用。", category: "code", price: "paid", url: "https://replicate.com", rating: "4.7", domain: "replicate.com", features: ["模型运行", "微调", "API调用"], hot: true,
-            tutorial: {"tips":["支持运行多种开源模型","可以微调模型，定制化功能","API调用简单，快速集成"]}
-            }
-            { name: "Hugging Face", desc: "AI模型社区，托管数万个开源模型，支持在线试用和下载部署。", category: "code", price: "free", url: "https://huggingface.co", rating: "4.8", domain: "huggingface.co", features: ["模型社区", "在线试用", "下载部署"], hot: true,
-            tutorial: {"tips":["托管数万个开源模型，资源丰富","支持在线试用，无需下载","社区活跃，可以学习模型使用技巧"]}
-            }
-            { name: "Jasper AI", desc: "AI营销文案生成工具，适合广告和社交媒体内容，支持品牌语调自定义。", category: "writing", price: "paid", url: "https://jasper.ai", rating: "4.5", domain: "jasper.ai", features: ["营销文案", "品牌语调", "广告生成"],
-            tutorial: {"tips":["专注营销文案，转化率高","支持A/B测试，优化广告效果","提供品牌语调一致性工具"]}
-            }
-            { name: "RunwayML", desc: "AI视频生成和编辑工具，支持文字生成视频、图片生成视频，专业级质量。", category: "video", price: "paid", url: "https://runwayml.com", rating: "4.8", domain: "runwayml.com", features: ["文字生成视频", "图片生成视频", "专业级"],
-            tutorial: {"tips":["专业级视频AI，效果惊艳","支持4K高清输出","提供丰富的视频编辑工具"]}
-            }
-            { name: "Playground AI", desc: "免费AI图像生成工具，支持多种模型，包括Stable Diffusion和DALL-E。", category: "image", price: "free", url: "https://playgroundai.com", rating: "4.6", domain: "playgroundai.com", features: ["多模型支持", "SD+DALL-E", "免费使用"],
-            tutorial: {"tips":["免费使用Stable Diffusion","支持多种模型，包括DALL-E","社区氛围好，分享创作灵感"]}
-            }
-            
-            // 2025-2026新增工具
-            { name: "OpenCode", desc: "开源AI编程助手，2025年6月发布，支持75+大模型，采用MIT协议。专为终端环境设计，提供TUI界面，支持代码生成、补全、调试、重构等功能，可本地部署保护隐私。被誉为Claude Code最佳开源平替。", category: "code", price: "free", url: "https://github.com/sst/opencode", rating: "4.8", domain: "github.com", features: ["开源", "75+模型", "TUI界面"], new: true,
-            tutorial: {"tips":["支持75+大模型，选择丰富","TUI界面，终端用户友好","完全开源，可本地部署"]}
-            }
-            { name: "Manus", desc: "全球首款通用AI Agent产品，由Monica公司推出（2025年3月）。可自主完成复杂任务如撰写报告、制作表格、网站建设等，无需用户持续监督，云端独立运行。", category: "productivity", price: "paid", url: "https://manus.im", rating: "4.6", domain: "manus.im", features: ["通用Agent", "云端运行", "复杂任务"], hot: true,
-            tutorial: {"tips":["通用AI Agent，适用性广","云端独立运行，无需本地资源","可自主完成多步骤任务"]}
-            }
-            { name: "Seedance 2.0", desc: "字节跳动2026年发布的AI视频生成模型，支持480P/720P输出，帧率24fps。多模态输入支持文本、图像、视频、音频参考，成品可用率达90%，被誉为导演级AI。", category: "video", price: "paid", url: "https://www.volcengine.com/seedance", rating: "4.7", domain: "volcengine.com", features: ["480P/720P", "多模态输入", "导演级"], new: true,
-            tutorial: {"tips":["支持480P/720P输出，适合短视频","多模态输入，包括文本、图像、视频","成品可用率高达90%"]}
-            }
-            { name: "秘塔AI搜索", desc: "上海秘塔网络科技推出的AI搜索引擎（2025年），被誉为中国版Perplexity。提供简洁/深入/学术三种模式，深度研究功能免费开放，月活用户破千万，市场占比57.7%。", category: "productivity", price: "free", url: "https://metaso.cn", rating: "4.6", domain: "metaso.cn", features: ["简洁/深入/学术", "免费研究", "月活千万"], hot: true,
-            tutorial: {"tips":["提供三种模式：简洁、深入、学术","深度研究功能免费开放","月活用户破千万，口碑好"]}
-            }
-            { name: "Nano Banana Pro", desc: "Google推出的AI图像生成工具，是Gemini 3 Pro的图像生成能力。2025-2026年重大更新，在人物、物件一致性方面取得突破，多轮编辑仍能保持人物特征。", category: "image", price: "free", url: "https://aistudio.google.com", rating: "4.5", domain: "aistudio.google.com", features: ["人物一致性", "多轮编辑", "Gemini集成"], new: true,
-            tutorial: {"tips":["人物、物件一致性表现突出","支持多轮编辑，保持特征","Gemini 3 Pro驱动，效果出色"]}
-            }
-            { name: "NotebookLM", desc: "Google推出的AI知识管理工具，2024年底正式产品化，2025年重大升级。由Gemini 3.1 Pro驱动，支持PDF/YouTube/Google Docs分析，Audio Overview功能可将文档转为双人播客。", category: "productivity", price: "free", url: "https://notebooklm.google.com", rating: "4.7", domain: "notebooklm.google.com", features: ["PDF分析", "Audio Overview", "知识管理"],
-            tutorial: {"tips":["支持PDF、YouTube、Google Docs分析","Audio Overview可生成播客","由Gemini 3.1 Pro驱动"]}
-            }
-            { name: "天工AI", desc: "昆仑万维推出的AI搜索工具，将搜索、写作、文档分析整合一体化。2025年持续迭代，适合需要搜资料又需要即时产出的复合任务用户。", category: "productivity", price: "free", url: "https://www.tiangong.cn", rating: "4.3", domain: "tiangong.cn", features: ["搜索写作一体", "文档分析", "中文优化"],
-            tutorial: {"tips":["搜索、写作、文档分析一体化","适合复合任务用户","2025年持续迭代更新"]}
-            }
-            { name: "即梦AI", desc: "字节跳动旗下AI创意平台，主打低门槛视觉表达。输入简单描述即可产出电影级图像或短视频，已接入Seedance技术，适合创意内容生产者。", category: "image", price: "free", url: "https://jimeng.jianying.com", rating: "4.5", domain: "jianying.com", features: ["低门槛", "图像视频", "字节技术"], new: true,
-            tutorial: {"tips":["低门槛，输入描述即可生成","已接入Seedance技术","适合创意内容生产者"]}
-            }
-            { name: "可灵AI", desc: "快手推出的AI视频生成工具，在物理真实感上表现惊艳。代表国产AI视频生成顶尖水准，可一键生成长视频并自带基础剪辑逻辑。", category: "video", price: "paid", url: "https://kling.kuaishou.com", rating: "4.5", domain: "kuaishou.com", features: ["物理真实感", "长视频", "国产顶尖"], hot: true,
-            tutorial: {"tips":["物理真实感表现惊艳","可一键生成长视频","代表国产AI视频顶尖水准"]}
-            }
-            { name: "红鸦AI", desc: "2026年新兴图文创作工具，一句话生成整套小红书图文。支持批量产出风格统一的9张配图+标题+正文，一键发布，5分钟内完成整个流程。", category: "productivity", price: "paid", url: "https://hy.ithinkai.cn", rating: "4.4", domain: "ithinkai.cn", features: ["小红书图文", "批量生成", "一键发布"],
-            tutorial: {"tips":["一句话生成整套小红书图文","批量产出风格统一内容","5分钟内完成整个流程"]}
-            }
-            { name: "讯飞智文", desc: "科大讯飞推出的PPT生成AI，根据长文稿或音视频直接生成PPT大纲，自动匹配专业排版设计。结构化排版能力突出，适合职场人士。", category: "productivity", price: "free", url: "https://zhiwen.xfyun.cn", rating: "4.4", domain: "xfyun.cn", features: ["PPT生成", "大纲自动", "排版设计"],
-            tutorial: {"tips":["长文稿或音视频直接生成PPT","自动匹配专业排版设计","适合职场人士使用"]}
-            }
-            { name: "通义灵码", desc: "阿里基于Qwen 2.5-Coder的AI编程助手，个人版完全免费。对Java/Go/Spring Boot等框架代码补全精准，支持本地工程问答，阿里云生态深度集成。", category: "code", price: "free", url: "https://tongyi.aliyun.com/lingma", rating: "4.6", domain: "aliyun.com", features: ["Java/Go补全", "免费使用", "阿里集成"],
-            tutorial: {"tips":["个人版完全免费","Java/Go/Spring等框架补全精准","支持本地工程问答"]}
-            }
-            { name: "文心快码", desc: "百度推出的AI编程工具，主打SPEC规范驱动开发模式。通过Doc→Code的白盒化流程降低幻觉风险，特别适合C++/C#及复杂业务系统开发。", category: "code", price: "free", url: "https://comate.baidu.com", rating: "4.4", domain: "baidu.com", features: ["SPEC驱动", "白盒化", "C++/C#"],
-            tutorial: {"tips":["SPEC规范驱动开发","降低代码幻觉风险","适合C++/C#及复杂业务"]}
-            }
-            { name: "海螺AI", desc: "字节跳动旗下AI助手，主打视频创作过程中的交互感。将文案创作与视觉特效生成有机结合，兼顾集成度与生成质量稳定性。", category: "video", price: "free", url: "https://hailuoai.com", rating: "4.3", domain: "hailuoai.com", features: ["视频创作", "文案特效", "字节出品"],
-            tutorial: {"tips":["主打视频创作交互感","文案创作与视觉特效结合","兼顾集成度和稳定性"]}
-            }
-            { name: "Claude 4.0", desc: "Anthropic推出的最新Claude模型，支持200万Token上下文，具备更强的多模态能力和推理能力。", category: "productivity", price: "按Token计费", url: "https://www.anthropic.com/claude", rating: "4.9", domain: "anthropic.com", features: ["200万上下文", "多模态", "强推理"], hot: true, new: true,
-            tutorial: {"tips":["支持200万Token超长上下文，分析整本PDF","多模态能力更强，可以理解复杂图表","推理能力提升，适合解决复杂问题"]}
-            }
-            { name: "v0.dev", desc: "Vercel推出的AI UI生成工具，通过自然语言描述生成React组件，支持Tailwind CSS，设计系统级组件。", category: "code", price: "免费", url: "https://v0.dev", rating: "4.8", domain: "v0.dev", features: ["UI生成", "React组件", "Tailwind CSS"], hot: true, new: true,
-            tutorial: {"tips":["专门用于生成React组件","支持Tailwind CSS样式","生成的组件可以直接复制到项目中"]}
-            }
-            { name: "AutoGPT Next", desc: "AutoGPT的升级版本，支持更强大的任务规划和执行能力，可自主完成复杂的工作流程。", category: "productivity", price: "免费", url: "https://autogpt.net", rating: "4.7", domain: "autogpt.net", features: ["任务规划", "工作流程", "自主执行"], new: true , tutorial: {"tips":["支持更强大的任务规划能力","可以自主完成复杂的工作流程","无需用户持续监督"]}
-            },
-            { name: "OpenAI o1", desc: "OpenAI推出的推理模型，擅长复杂问题解决，支持链式思维，在数学和编程任务上表现出色。", category: "productivity", price: "按Token计费", url: "https://openai.com/o1", rating: "4.9", domain: "openai.com", features: ["复杂推理", "链式思维", "数学编程"], hot: true, new: true,
-            tutorial: {"tips":["擅长数学和编程推理问题","会自动进行链式思考，展示推理过程","适合需要深度分析的任务"]}
-            }
-            { name: "Supabase AI", desc: "Supabase的AI助手，支持自然语言生成SQL查询、数据库优化和API设计，让开发更高效。", category: "code", price: "免费", url: "https://supabase.com/ai", rating: "4.7", domain: "supabase.com", features: ["SQL生成", "数据库优化", "API设计"], new: true , tutorial: {"tips":["支持自然语言生成SQL查询","可以优化数据库性能","自动生成API设计"]}
-            },
-            { name: "Lovable", desc: "AI全栈开发平台，可以快速构建和部署完整的Web应用，支持Next.js和Supabase，5分钟内上线产品。", category: "code", price: "免费版可用", url: "https://lovable.dev", rating: "4.7", domain: "lovable.dev", features: ["全栈开发", "快速部署", "Next.js支持"], hot: true, new: true,
-            tutorial: {"tips":["5分钟内可以生成完整的Web应用","支持Next.js和Supabase","可以直接部署到Vercel"]}
-            }
-            { name: "Linear AI", desc: "项目管理工具Linear的AI助手，支持智能任务分配、进度预测和优先级排序，提升团队效率。", category: "productivity", price: "付费", url: "https://linear.app/ai", rating: "4.8", domain: "linear.app", features: ["任务分配", "进度预测", "优先级排序"], new: true , tutorial: {"tips":["支持智能任务分配","可以预测项目进度","自动进行优先级排序"]}
-            },
-            { name: "Cursor 2.0", desc: "新一代AI代码编辑器，支持MCP协议，可深度集成多种AI模型，提供智能代码生成、重构和调试功能，被誉为VS Code的AI升级版。", category: "code", price: "免费版可用，Pro版$20/月", url: "https://cursor.sh", rating: "4.9", domain: "cursor.sh", features: ["MCP协议支持", "多模型集成", "智能重构"], hot: true, new: true,
-            tutorial: {"tips":["支持MCP协议，可以深度集成多种AI模型","可以同时使用GPT-4和Claude","智能重构功能可以优化代码结构"]}
-            }
-            { name: "Suno v4", desc: "2025年推出的AI音乐生成模型，支持多语言歌词创作，音乐质量大幅提升，可生成专业级歌曲。", category: "audio", price: "免费版可用，Pro版$10/月", url: "https://suno.com", rating: "4.8", domain: "suno.com", features: ["多语言歌词", "专业级音质", "快速生成"], hot: true, new: true , tutorial: {"tips":["音乐质量大幅提升","支持多语言歌词创作","可生成专业级歌曲"]}
-            },
-            { name: "Udio v2", desc: "AI音乐创作平台，支持多种音乐风格，可以生成完整的歌曲，包括歌词、旋律和编曲。", category: "audio", price: "免费版可用", url: "https://www.udio.com", rating: "4.7", domain: "udio.com", features: ["多种风格", "完整歌曲", "智能编曲"], new: true },
-            { name: "Fireworks AI", desc: "高性能AI推理平台，提供快速、低成本的模型托管服务，支持自定义模型部署。", category: "code", price: "按使用计费", url: "https://fireworks.ai", rating: "4.6", domain: "fireworks.ai", features: ["快速推理", "低成本", "自定义部署"], new: true,
-            tutorial: {"tips":["推理速度快，延迟低","按使用计费，成本可控","支持自定义模型部署"]}
-            }
-            { name: "Replit AI 2.0", desc: "Replit的AI编程助手升级版，支持多文件编辑、测试生成和代码审查，适合完整项目开发。", category: "code", price: "免费版可用", url: "https://replit.com/ai", rating: "4.7", domain: "replit.com", features: ["多文件编辑", "测试生成", "代码审查"], new: true,
-            tutorial: {"tips":["支持多文件编辑","自动生成测试","适合完整项目开发"]}
-            }
-            { name: "Bolt.new", desc: "StackBlitz推出的AI全栈开发平台，一句话即可生成完整Web应用，支持实时预览和部署，零配置开发。", category: "code", price: "免费版可用", url: "https://bolt.new", rating: "4.8", domain: "bolt.new", features: ["全栈生成", "实时预览", "一键部署"], hot: true, new: true,
-            tutorial: {"tips":["用自然语言描述网站功能即可生成","支持实时预览和部署","生成的代码可以下载到本地"]}
-            }
-            { name: "Stable Diffusion 3", desc: "Stability AI推出的新一代图像生成模型，支持更高分辨率和更精细的细节，文字生成能力大幅提升。", category: "image", price: "免费开源", url: "https://stability.ai", rating: "4.8", domain: "stability.ai", features: ["高分辨率", "精细细节", "文字生成"], hot: true, new: true,
-            tutorial: {"tips":["支持更高分辨率输出","细节更精细","文字生成能力大幅提升"]}
-            }
-            { name: "Midjourney v7", desc: "Midjourney最新版本，支持更自然的风格、更好的提示词理解和更快的生成速度。", category: "image", price: "$10-120/月", url: "https://midjourney.com", rating: "4.9", domain: "midjourney.com", features: ["自然风格", "提示词理解", "快速生成"], hot: true, new: true,
-            tutorial: {"tips":["风格更自然逼真","提示词理解能力更强","生成速度更快"]}
-            }
+            { name: "Microsoft Copilot", desc: "Office 365 AI助手，Word、Excel、PPT智能化。集成在Office中，帮助提高办公效率。", category: "business", price: "paid", url: "https://copilot.microsoft.com", rating: "4.5", domain: "microsoft.com" },
+            { name: "Google Duet AI", desc: "Google Workspace AI助手，Gmail、Docs智能化。帮助自动撰写邮件、总结文档等。", category: "business", price: "paid", url: "https://workspace.google.com", rating: "4.4", domain: "google.com" },
+            { name: "Sunshine AI", desc: "AI情绪陪伴助手，提供心理健康支持和情感交流，24小时在线陪伴。", category: "chat", price: "free", url: "https://sunshine.ai", rating: "4.4", domain: "sunshine.ai" },
+            { name: "Character.AI", desc: "与AI角色对话，创建自己的AI角色，支持多种 personality 和场景。", category: "chat", price: "free", url: "https://character.ai", rating: "4.5", domain: "character.ai", features: ["角色对话", "创建AI角色", "多种场景"] },
+            { name: "Midjourney Discord", desc: "通过Discord使用的AI图像生成工具，社区活跃，每月发布新功能。", category: "image", price: "paid", url: "https://midjourney.com", rating: "4.9", domain: "midjourney.com", features: ["Discord集成", "社区活跃", "持续更新"] },
+            { name: "Perplexity AI", desc: "AI搜索引擎，提供准确的答案和引用来源，适合学习和研究。", category: "productivity", price: "free", url: "https://perplexity.ai", rating: "4.7", domain: "perplexity.ai", features: ["引用来源", "准确答案", "研究工具"] },
+            { name: "AutoGPT", desc: "自主运行的AI代理，能够自动分解任务并执行，无需人工干预。适合自动化工作流程。", category: "productivity", price: "free", url: "https://autogpt.net", rating: "4.6", domain: "autogpt.net", features: ["自主任务分解", "无需人工干预", "自动化工作流"], hot: true },
+            { name: "Replicate", desc: "机器学习模型运行平台，可以运行和微调各种开源AI模型，支持API调用。", category: "code", price: "paid", url: "https://replicate.com", rating: "4.7", domain: "replicate.com", features: ["模型运行", "微调", "API调用"], hot: true },
+            { name: "Hugging Face", desc: "AI模型社区，托管数万个开源模型，支持在线试用和下载部署。", category: "code", price: "free", url: "https://huggingface.co", rating: "4.8", domain: "huggingface.co", features: ["模型社区", "在线试用", "下载部署"], hot: true },
+            { name: "Jasper AI", desc: "AI营销文案生成工具，适合广告和社交媒体内容，支持品牌语调自定义。", category: "writing", price: "paid", url: "https://jasper.ai", rating: "4.5", domain: "jasper.ai", features: ["营销文案", "品牌语调", "广告生成"] },
+            { name: "RunwayML", desc: "AI视频生成和编辑工具，支持文字生成视频、图片生成视频，专业级质量。", category: "video", price: "paid", url: "https://runwayml.com", rating: "4.8", domain: "runwayml.com", features: ["文字生成视频", "图片生成视频", "专业级"] },
+            { name: "Playground AI", desc: "免费AI图像生成工具，支持多种模型，包括Stable Diffusion和DALL-E。", category: "image", price: "free", url: "https://playgroundai.com", rating: "4.6", domain: "playgroundai.com", features: ["多模型支持", "SD+DALL-E", "免费使用"] }
         ];
         
         let currentCategory = 'all';
@@ -2270,7 +1553,7 @@
                 card.innerHTML = `
                     <div class="card-header">
                         <div class="card-logo" style="background: white;">
-                            <img loading="lazy" <img src="${logoUrl}" alt="${tool.name}" loading="lazy" onerror="this.src='${faviconUrl}'">
+                            <img src="${logoUrl}" alt="${tool.name}" loading="lazy" onerror="this.src='${faviconUrl}'">
                         </div>
                         ${badgeHtml}
                     </div>
@@ -2465,178 +1748,10 @@
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
         });
         
-        // 语言切换功能
-        const langBtns = document.querySelectorAll('.lang-btn');
-        const html = document.documentElement;
-        
-        // 从 localStorage 读取保存的语言偏好
-        const savedLang = localStorage.getItem('preferredLanguage') || 'zh';
-        html.lang = savedLang;
-        updateLanguageButtons(savedLang);
-        
-        // 语言切换事件
-        langBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const lang = btn.dataset.lang;
-                html.lang = lang;
-                localStorage.setItem('preferredLanguage', lang);
-                updateLanguageButtons(lang);
-                updateContentLanguage(lang);
-                showToast(`已切换到${lang === 'zh' ? '中文' : 'English'}`);
-            });
-        });
-        
-        function updateLanguageButtons(lang) {
-            langBtns.forEach(btn => {
-                if (btn.dataset.lang === lang) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
-        }
-        
-        function updateContentLanguage(lang) {
-            // 更新搜索框占位符
-            const searchInput = document.getElementById('searchInput');
-            if (searchInput) {
-                searchInput.placeholder = lang === 'zh' ? '搜索AI工具...' : 'Search AI tools...';
-            }
-            
-            // 更新工具数量显示
-            const totalToolsEl = document.getElementById('totalTools');
-            if (totalToolsEl) {
-                totalToolsEl.textContent = lang === 'zh' ? '79个工具' : '79 Tools';
-            }
-            
-            // 更新页脚链接
-            updateFooterLinks(lang);
-        }
-        
-        function updateFooterLinks(lang) {
-            const footerLinks = document.querySelectorAll('.footer-links a');
-            const footerTexts = {
-                zh: ["首页", "工具详情", "隐私政策", "使用条款", "联系我们"],
-                en: ["Home", "Tools", "Privacy", "Terms", "Contact"]
-            };
-            
-            footerLinks.forEach((link, index) => {
-                if (footerTexts[lang][index]) {
-                    link.textContent = footerTexts[lang][index];
-                }
-            });
-        }
-        
-        // 初始化时更新内容
-        updateContentLanguage(savedLang);
-        
         // 初始化
         renderRanking();
         renderTools();
-        setTimeout(lazyLoadImages, 500);
-        
-        
-        // 收藏功能
-        let favorites = JSON.parse(localStorage.getItem('aiToolsFavorites') || '[]');
-        
-        function toggleFavorite(toolName) {
-            const index = favorites.indexOf(toolName);
-            if (index > -1) {
-                favorites.splice(index, 1);
-                showToast('已取消收藏');
-            } else {
-                favorites.push(toolName);
-                showToast('已添加到收藏');
-            }
-            localStorage.setItem('aiToolsFavorites', JSON.stringify(favorites));
-            updateFavoriteButtons();
-            updateFavoritesCount();
-        }
-        
-        function updateFavoriteButtons() {
-            document.querySelectorAll('.favorite-btn').forEach(btn => {
-                const toolName = btn.dataset.tool;
-                const icon = btn.querySelector('.favorite-icon');
-                if (favorites.includes(toolName)) {
-                    icon.textContent = '❤️';
-                    btn.classList.add('active');
-                } else {
-                    icon.textContent = '🤍';
-                    btn.classList.remove('active');
-                }
-            });
-        }
-        
-        function updateFavoritesCount() {
-            const countEl = document.getElementById('favoritesCount');
-            if (countEl) {
-                countEl.textContent = favorites.length;
-            }
-        }
-        
-        // 分享功能
-        function shareTool(toolName, toolUrl) {
-            const shareData = {
-                title: toolName + ' - 海梦的AI工具宝库',
-                text: '发现了一个很棒的AI工具：' + toolName,
-                url: window.location.origin + '/detail.html?tool=' + encodeURIComponent(toolName)
-            };
-            
-            if (navigator.share) {
-                navigator.share(shareData).catch(() => {});
-            } else {
-                copyToClipboard(shareData.url);
-                showToast('链接已复制到剪贴板');
-            }
-        }
-        
-        function copyToClipboard(text) {
-            const textarea = document.createElement('textarea');
-            textarea.value = text;
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textarea);
-        }
-        
-        // 页面加载后更新收藏状态
-        document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
-                updateFavoriteButtons();
-                updateFavoritesCount();
-            }, 500);
-        });
-        
- // 渲染后启动懒加载
+        setTimeout(lazyLoadImages, 500); // 渲染后启动懒加载
     </script>
-
-        
-    <!-- 工具对比栏 -->
-    <div class="compare-bar" id="compareBar">
-        <div class="compare-items" id="compareItems">
-            <!-- 对比工具会动态添加到这里 -->
-        </div>
-        <div class="compare-actions">
-            <button class="compare-btn compare-btn-secondary" id="clearCompare">清空</button>
-            <button class="compare-btn compare-btn-primary" id="showCompare" disabled>对比工具 (0/4)</button>
-        </div>
-    </div>
-    
-    <!-- 对比模态框 -->
-    <div class="modal" id="compareModal">
-        <div class="modal-content" style="max-width: 1400px;">
-            <div class="modal-header">
-                <h2>🔍 工具对比</h2>
-                <button class="modal-close" onclick="closeCompareModal()">×</button>
-            </div>
-            <div class="modal-body">
-                <div class="compare-table" id="compareTable">
-                    <!-- 对比表格会动态生成 -->
-                </div>
-            </div>
-        </div>
-    </div>
-    
-
 </body>
 </html>
