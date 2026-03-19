@@ -1519,7 +1519,7 @@
             const ranking = getWeeklyRanking();
             
             rankingList.innerHTML = ranking.map((tool, index) => `
-                <a href="#tool-${encodeURIComponent(tool.name)}" class="ranking-item">
+                <a href="detail.html?tool=${encodeURIComponent(tool.name)}" class="ranking-item">
                     <div class="ranking-number">
                         <span class="rank-badge ${index < 3 ? 'top-' + (index + 1) : ''}">${index + 1}</span>
                     </div>

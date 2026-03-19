@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工具详情 - 海梦的AI工具宝库</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        .back { display: inline-block; margin-bottom: 20px; color: #667eea; text-decoration: none; }
+        .back:hover { text-decoration: underline; }
+        .tool-header { background: white; border-radius: 16px; padding: 30px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .tool-name { font-size: 32px; margin-bottom: 10px; color: #333; }
+        .tool-rating { color: #f5c518; font-size: 18px; margin-bottom: 15px; }
+        .tool-desc { color: #666; font-size: 16px; margin-bottom: 20px; }
+        .tool-meta { display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 20px; }
+        .tool-tag { background: #f0f0f0; padding: 5px 12px; border-radius: 15px; font-size: 14px; color: #666; }
+        .tool-link { display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; }
+        .tool-link:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(102,126,234,0.4); }
+        .section { background: white; border-radius: 16px; padding: 30px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .section h2 { color: #667eea; margin-bottom: 15px; font-size: 20px; }
+        .feature-list { list-style: none; }
+        .feature-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; }
+        .feature-list li:last-child { border-bottom: none; }
+        .tip { background: #f8f9fa; padding: 15px; border-radius: 10px; margin: 10px 0; border-left: 4px solid #667eea; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back">← 返回首页</a>
+        
+        <div id="toolContent">
+            <div class="tool-header">
+                <h1 class="tool-name" id="toolName">加载中...</h1>
+                <div class="tool-rating" id="toolRating">⭐ 0.0</div>
+                <p class="tool-desc" id="toolDesc">请稍候...</p>
+                <div class="tool-meta">
+                    <span class="tool-tag" id="toolCategory">分类</span>
+                    <span class="tool-tag" id="toolPrice">价格</span>
+                </div>
+                <a href="#" class="tool-link" id="toolLink" target="_blank">访问官网 →</a>
+            </div>
+            
+            <div class="section">
+                <h2>核心功能</h2>
+                <ul class="feature-list" id="toolFeatures">
+                    <li>暂无功能信息</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>使用技巧</h2>
+                <div id="toolTips">
+                    <div class="tip">暂无使用技巧</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 工具数据
+        const toolsData = [
+            { name: "ChatGPT", desc: "OpenAI的旗舰对话模型，支持多模态交互，目前最强大的通用AI助手。", category: "AI聊天", price: "免费/付费", features: ["多模态交互", "代码编写", "文档分析", "创意生成"], tips: ["使用'扮演...'可以让ChatGPT以特定身份回答问题", "添加'逐步思考'可以获得更详细的推理过程", "上传PDF文档后可以进行摘要和问答"] },
+            { name: "Claude", desc: "Anthropic的AI助手，擅长长文本处理和代码编写，上下文理解能力出色。", category: "AI聊天", price: "免费", features: ["长文本处理", "代码编写", "20万Token上下文"], tips: ["支持20万字长文档上传，适合分析论文", "擅长代码审查和重构", "使用'请用表格形式'可以获得结构化输出"] },
+            { name: "Gemini", desc: "Google的AI助手，多模态能力强，与Google生态深度集成。", category: "AI聊天", price: "免费", features: ["多模态", "实时联网", "Google生态集成"], tips: ["可以直接联网搜索获取最新信息", "支持分析YouTube视频内容", "可以生成和编辑Google Docs文档"] },
+            { name: "Midjourney", desc: "高质量AI图像生成，艺术风格多样，适合创意设计和艺术创作。", category: "图像生成", price: "付费", features: ["艺术风格", "图片编辑", "社区活跃"], tips: ["使用'--ar 16:9'指定图片宽高比", "添加'--v 6'使用最新版本模型", "使用'--style raw'获得更原始的艺术效果"] },
+            { name: "Stable Diffusion", desc: "开源AI图像生成模型，完全免费可本地部署。", category: "图像生成", price: "免费", features: ["开源免费", "本地部署", "高度定制"], tips: ["使用负面提示词提升质量", "调整采样步数平衡速度和效果", "使用ControlNet控制图像结构"] },
+            { name: "Cursor", desc: "AI原生代码编辑器，集成Claude和GPT，代码生成能力强。", category: "编程开发", price: "免费", features: ["自然语言编程", "代码补全", "调试重构"], tips: ["使用Ctrl+K快速生成代码", "使用Ctrl+L进行对话式编程", "支持多文件编辑和理解"] },
+            { name: "GitHub Copilot", desc: "AI代码补全，提高开发效率，支持多种编程语言。", category: "编程开发", price: "付费", features: ["实时补全", "代码建议", "多语言支持"], tips: ["Tab键接受建议", "Alt+]查看下一个建议", "可以训练自定义模型"] }
+        ];
+        
+        // 获取URL参数
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+        
+        // 渲染页面
+        function render() {
+            const toolName = getQueryParam('tool');
+            const tool = toolsData.find(t => t.name.toLowerCase() === (toolName || '').toLowerCase());
+            
+            if (tool) {
+                document.getElementById('toolName').textContent = tool.name;
+                document.getElementById('toolRating').textContent = '⭐ 4.8';
+                document.getElementById('toolDesc').textContent = tool.desc;
+                document.getElementById('toolCategory').textContent = tool.category;
+                document.getElementById('toolPrice').textContent = tool.price;
+                document.getElementById('toolLink').href = `https://${tool.name.toLowerCase().replace('.', '')}.com` || 'https://google.com';
+                
+                // 功能列表
+                const featuresHtml = tool.features.map(f => `<li>✓ ${f}</li>`).join('');
+                document.getElementById('toolFeatures').innerHTML = featuresHtml;
+                
+                // 使用技巧
+                const tipsHtml = tool.tips.map(t => `<div class="tip">💡 ${t}</div>`).join('');
+                document.getElementById('toolTips').innerHTML = tipsHtml;
+                
+                document.title = `${tool.name} - 海梦的AI工具宝库`;
+            } else {
+                document.getElementById('toolName').textContent = '工具未找到';
+                document.getElementById('toolDesc').textContent = '抱歉，您查找的工具不存在。';
+            }
+        }
+        
+        render();
+    </script>
+</body>
+</html>
