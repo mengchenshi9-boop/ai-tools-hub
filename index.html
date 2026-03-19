@@ -1352,29 +1352,51 @@
     <script>
         const tools = [
             // AI聊天
-            { name: "ChatGPT", desc: "OpenAI的旗舰对话模型，支持多模态交互，目前最强大的通用AI助手。支持文本、图像输入，能够回答问题、编写代码、分析文档等多种任务。", category: "chat", price: "free", url: "https://chat.openai.com", rating: "4.9", domain: "chat.openai.com", features: ["多模态交互", "代码编写", "文档分析"], hot: true, userRating: 4.8, userVotes: 1523 },
-            { name: "Claude", desc: "Anthropic的AI助手，擅长长文本处理和代码编写，上下文理解能力出色。支持20万字长文本输入，适合文档分析和长篇写作。", category: "chat", price: "free", url: "https://claude.ai", rating: "4.8", domain: "claude.ai", features: ["长文本处理", "代码编写", "20万Token上下文"], userRating: 4.7, userVotes: 892 },
-            { name: "Gemini", desc: "Google的AI助手，多模态能力强，与Google生态深度集成。支持实时联网搜索、Google Workspace集成，办公场景表现出色。", category: "chat", price: "free", url: "https://gemini.google.com", rating: "4.7", domain: "gemini.google.com", features: ["多模态", "实时联网", "Google生态集成"], userRating: 4.6, userVotes: 654 },
-            { name: "Kimi", desc: "月之暗面出品，支持超长上下文（200万字），中文理解优秀。适合长文档阅读、长篇小说创作，中文对话体验极佳。", category: "chat", price: "free", url: "https://kimi.moonshot.cn", rating: "4.7", domain: "kimi.moonshot.cn", features: ["200万字上下文", "中文优化", "长文档处理"], new: true, userRating: 4.5, userVotes: 328 },
+            { name: "ChatGPT", desc: "OpenAI的旗舰对话模型，支持多模态交互，目前最强大的通用AI助手。支持文本、图像输入，能够回答问题、编写代码、分析文档等多种任务。", category: "chat", price: "free", url: "https://chat.openai.com", rating: "4.9", domain: "chat.openai.com", features: ["多模态交互", "代码编写", "文档分析"], hot: true, userRating: 4.8, userVotes: 1523,
+            tutorial: {"tips":["使用 '扮演...' 可以让ChatGPT以特定身份回答问题","添加 '逐步思考' 可以获得更详细的推理过程","上传PDF文档后可以进行摘要、问答和翻译"]}
+            }
+            { name: "Claude", desc: "Anthropic的AI助手，擅长长文本处理和代码编写，上下文理解能力出色。支持20万字长文本输入，适合文档分析和长篇写作。", category: "chat", price: "free", url: "https://claude.ai", rating: "4.8", domain: "claude.ai", features: ["长文本处理", "代码编写", "20万Token上下文"], userRating: 4.7, userVotes: 892,
+            tutorial: {"tips":["支持20万字长文档上传，适合分析完整论文或书籍","擅长代码审查和重构，可以直接粘贴项目代码","使用 '请用表格形式' 可以获得结构化输出"]}
+            }
+            { name: "Gemini", desc: "Google的AI助手，多模态能力强，与Google生态深度集成。支持实时联网搜索、Google Workspace集成，办公场景表现出色。", category: "chat", price: "free", url: "https://gemini.google.com", rating: "4.7", domain: "gemini.google.com", features: ["多模态", "实时联网", "Google生态集成"], userRating: 4.6, userVotes: 654,
+            tutorial: {"tips":["可以直接联网搜索，获取最新信息","支持分析YouTube视频内容","可以生成和编辑Google Docs文档"]}
+            }
+            { name: "Kimi", desc: "月之暗面出品，支持超长上下文（200万字），中文理解优秀。适合长文档阅读、长篇小说创作，中文对话体验极佳。", category: "chat", price: "free", url: "https://kimi.moonshot.cn", rating: "4.7", domain: "kimi.moonshot.cn", features: ["200万字上下文", "中文优化", "长文档处理"], new: true, userRating: 4.5, userVotes: 328,
+            tutorial: {"tips":["支持200万字上下文，可以分析整本小说","中文理解能力出色，适合中文写作","可以同时上传多个文档进行对比分析"]}
+            }
             { name: "通义千问", desc: "阿里大模型，在中文理解和生成方面表现出色，企业级功能完善。支持文档解析、表格分析，适合商务场景使用。", category: "chat", price: "free", url: "https://tongyi.aliyun.com", rating: "4.6", domain: "tongyi.aliyun.com", features: ["中文理解", "文档解析", "企业级功能"], userRating: 4.4, userVotes: 421 },
             
             // 图片生成
-            { name: "Midjourney", desc: "高质量AI图像生成，艺术风格多样，适合创意设计和艺术创作。在Discord运行，社区活跃，最新版本支持图片编辑和文字转图片。", category: "image", price: "paid", url: "https://midjourney.com", rating: "4.9", domain: "midjourney.com", features: ["艺术风格", "图片编辑", "社区活跃"], hot: true },
-            { name: "DALL·E 3", desc: "OpenAI图像生成，对提示词理解力强，生成效果稳定。集成在ChatGPT Plus中，使用简单，支持自然语言描述生成图片。", category: "image", price: "paid", url: "https://openai.com/dall-e-3", rating: "4.8", domain: "openai.com", features: ["自然语言描述", "效果稳定", "ChatGPT集成"] },
-            { name: "Stable Diffusion", desc: "开源图像生成模型，本地可部署，社区生态丰富。支持自定义模型训练，可以生成各种风格的图像，完全免费使用。", category: "image", price: "free", url: "https://stability.ai", rating: "4.7", domain: "stability.ai", features: ["本地部署", "自定义模型", "完全免费"] },
+            { name: "Midjourney", desc: "高质量AI图像生成，艺术风格多样，适合创意设计和艺术创作。在Discord运行，社区活跃，最新版本支持图片编辑和文字转图片。", category: "image", price: "paid", url: "https://midjourney.com", rating: "4.9", domain: "midjourney.com", features: ["艺术风格", "图片编辑", "社区活跃"], hot: true,
+            tutorial: {"tips":["使用 '--ar 16:9' 指定图片宽高比","添加 '--v 6' 使用最新版本模型","使用 '--style raw' 获得更原始的艺术效果"]}
+            }
+            { name: "DALL·E 3", desc: "OpenAI图像生成，对提示词理解力强，生成效果稳定。集成在ChatGPT Plus中，使用简单，支持自然语言描述生成图片。", category: "image", price: "paid", url: "https://openai.com/dall-e-3", rating: "4.8", domain: "openai.com", features: ["自然语言描述", "效果稳定", "ChatGPT集成"],
+            tutorial: {"tips":["通过ChatGPT使用，可以直接用自然语言描述图片","支持对已生成图片进行局部修改","可以生成四张图片供选择"]}
+            }
+            { name: "Stable Diffusion", desc: "开源图像生成模型，本地可部署，社区生态丰富。支持自定义模型训练，可以生成各种风格的图像，完全免费使用。", category: "image", price: "free", url: "https://stability.ai", rating: "4.7", domain: "stability.ai", features: ["本地部署", "自定义模型", "完全免费"],
+            tutorial: {"tips":["使用 ControlNet 可以精确控制人物姿态","通过 LoRA 训练可以生成特定风格","本地部署需要较好的显卡（至少8GB显存）"]}
+            }
             { name: "Leonardo.ai", desc: "游戏和3D资产生成，提供多种预设风格，适合游戏开发者。支持游戏资产生成、3D模型创建，为游戏开发提供AI辅助。", category: "image", price: "free", url: "https://leonardo.ai", rating: "4.6", domain: "leonardo.ai", features: ["游戏资产生成", "3D模型", "AI辅助"] },
             { name: "Remove.bg", desc: "一键抠图，自动去除背景，处理速度极快。支持批量处理，API接口完善，适合电商、设计等需要快速抠图的场景。", category: "image", price: "free", url: "https://remove.bg", rating: "4.8", domain: "remove.bg", features: ["一键抠图", "批量处理", "API接口"] },
             
             // 视频编辑
-            { name: "CapCut", desc: "字节跳动出品，AI剪辑功能强大，自动字幕和特效。支持智能剪辑、自动生成字幕、AI配音，手机端和PC端全平台支持。", category: "video", price: "free", url: "https://www.capcut.com", rating: "4.8", domain: "capcut.com", features: ["AI剪辑", "自动字幕", "多平台支持"], hot: true },
-            { name: "Runway", desc: "AI视频生成和编辑工具，Gen-3模型效果惊艳。支持文字生成视频、图片生成视频、视频风格转换，专业级视频AI工具。", category: "video", price: "paid", url: "https://runwayml.com", rating: "4.9", domain: "runwayml.com", features: ["文字生成视频", "风格转换", "专业级"] },
+            { name: "CapCut", desc: "字节跳动出品，AI剪辑功能强大，自动字幕和特效。支持智能剪辑、自动生成字幕、AI配音，手机端和PC端全平台支持。", category: "video", price: "free", url: "https://www.capcut.com", rating: "4.8", domain: "capcut.com", features: ["AI剪辑", "自动字幕", "多平台支持"], hot: true,
+            tutorial: {"tips":["使用 'AI字幕' 自动生成多语言字幕","智能剪辑可以自动识别精彩片段","支持手机和云编辑，随时随地都可以制作"]}
+            }
+            { name: "Runway", desc: "AI视频生成和编辑工具，Gen-3模型效果惊艳。支持文字生成视频、图片生成视频、视频风格转换，专业级视频AI工具。", category: "video", price: "paid", url: "https://runwayml.com", rating: "4.9", domain: "runwayml.com", features: ["文字生成视频", "风格转换", "专业级"],
+            tutorial: {"tips":["使用 'Text to Video' 可以从文字生成视频","'Image to Video' 可以让静态图片动起来","支持帧率调整和分辨率优化"]}
+            }
             { name: "Pika", desc: "文字生成视频，效果出色，支持多种视频风格。操作简单，适合短视频创作者快速生成视频内容。", category: "video", price: "free", url: "https://pika.art", rating: "4.7", domain: "pika.art", features: ["文字生成视频", "多种风格", "操作简单"] },
             { name: "HeyGen", desc: "AI数字人视频生成，支持多语言口型同步。适合企业培训、产品介绍等场景，生成的数字人自然逼真。", category: "video", price: "paid", url: "https://heygen.com", rating: "4.6", domain: "heygen.com", features: ["数字人", "多语言口型", "自然逼真"] },
             { name: "Synthesia", desc: "企业级AI视频制作，数字人演示和培训视频。支持140+种语言和音色，适合跨国企业制作培训视频。", category: "video", price: "paid", url: "https://synthesia.io", rating: "4.5", domain: "synthesia.io", features: ["140+语言", "企业培训", "数字人演示"] },
             
             // 编程开发
-            { name: "GitHub Copilot", desc: "AI代码补全，提高开发效率，支持多种编程语言。集成在IDE中，实时建议代码，支持代码重构、文档生成等功能。", category: "code", price: "paid", url: "https://github.com/features/copilot", rating: "4.8", domain: "github.com", features: ["代码补全", "IDE集成", "代码重构"], hot: true },
-            { name: "Cursor", desc: "AI原生代码编辑器，集成Claude和GPT，代码生成能力强。支持自然语言修改代码、调试、重构，是当前最流行的AI编程工具。", category: "code", price: "free", url: "https://cursor.sh", rating: "4.9", domain: "cursor.sh", features: ["自然语言编程", "调试", "智能补全"], new: true },
+            { name: "GitHub Copilot", desc: "AI代码补全，提高开发效率，支持多种编程语言。集成在IDE中，实时建议代码，支持代码重构、文档生成等功能。", category: "code", price: "paid", url: "https://github.com/features/copilot", rating: "4.8", domain: "github.com", features: ["代码补全", "IDE集成", "代码重构"], hot: true,
+            tutorial: {"tips":["在代码注释中描述功能，可以生成完整代码","Tab键接受建议，Ctrl+Enter拒绝建议","支持多行代码补全，适合生成函数"]}
+            }
+            { name: "Cursor", desc: "AI原生代码编辑器，集成Claude和GPT，代码生成能力强。支持自然语言修改代码、调试、重构，是当前最流行的AI编程工具。", category: "code", price: "free", url: "https://cursor.sh", rating: "4.9", domain: "cursor.sh", features: ["自然语言编程", "调试", "智能补全"], new: true,
+            tutorial: {"tips":["使用 Command+K (Mac) 或 Ctrl+K (Win) 快速生成代码","支持多文件编辑，可以同时修改整个项目","内置终端可以直接运行生成的代码"]}
+            }
             { name: "Claude Code", desc: "Anthropic的代码助手，擅长复杂代码理解和重构。支持项目级代码分析、测试生成，适合大型项目开发。", category: "code", price: "paid", url: "https://www.anthropic.com", rating: "4.7", domain: "anthropic.com", features: ["项目级分析", "测试生成", "代码重构"] },
             { name: "Codeium", desc: "免费AI代码补全工具，响应速度快，隐私保护好。支持70+种编程语言，个人使用完全免费。", category: "code", price: "free", url: "https://codeium.com", rating: "4.6", domain: "codeium.com", features: ["免费使用", "70+语言", "隐私保护"] },
             { name: "Tabnine", desc: "企业级AI编程助手，支持私有代码库训练。支持自定义模型训练，保护企业代码隐私，适合大型企业使用。", category: "code", price: "paid", url: "https://tabnine.com", rating: "4.5", domain: "tabnine.com", features: ["私有模型训练", "企业级", "代码安全"] },
@@ -1382,19 +1404,27 @@
             // 写作助手
             { name: "Jasper", desc: "AI营销文案生成，适合广告和社交媒体内容。提供多种营销文案模板，支持品牌语调自定义，适合营销团队使用。", category: "writing", price: "paid", url: "https://jasper.ai", rating: "4.7", domain: "jasper.ai", features: ["营销文案", "模板丰富", "品牌语调"] },
             { name: "Copy.ai", desc: "营销文案和邮件写作，模板丰富，上手简单。支持90+种语言，提供博客文章、社交媒体内容等多种文案类型。", category: "writing", price: "free", url: "https://copy.ai", rating: "4.6", domain: "copy.ai", features: ["90+语言", "社交媒体", "博客文章"] },
-            { name: "Notion AI", desc: "笔记和文档智能助手，与Notion深度集成。支持文档写作、会议总结、表格分析，是Notion用户的理想选择。", category: "writing", price: "paid", url: "https://notion.so", rating: "4.5", domain: "notion.so", features: ["文档写作", "会议总结", "表格分析"] },
+            { name: "Notion AI", desc: "笔记和文档智能助手，与Notion深度集成。支持文档写作、会议总结、表格分析，是Notion用户的理想选择。", category: "writing", price: "paid", url: "https://notion.so", rating: "4.5", domain: "notion.so", features: ["文档写作", "会议总结", "表格分析"],
+            tutorial: {"tips":["选中文本后按 Space 键可以快速改写","可以自动总结长文档","支持翻译成多种语言"]}
+            }
             { name: "Grammarly", desc: "语法检查和写作优化，支持多种英语变体。支持实时写作建议，适合英语写作和非母语用户使用。", category: "writing", price: "free", url: "https://grammarly.com", rating: "4.8", domain: "grammarly.com", features: ["语法检查", "写作优化", "英语变体"] },
             { name: "Writesonic", desc: "SEO优化文章生成，支持长文和博客写作。提供SEO优化建议，帮助文章获得更好的搜索排名。", category: "writing", price: "paid", url: "https://writesonic.com", rating: "4.4", domain: "writesonic.com", features: ["SEO优化", "长文生成", "博客写作"] },
             
             // 效率工具
-            { name: "Perplexity", desc: "AI搜索引擎，引用来源，适合研究和信息查询。提供准确的答案和来源链接，是学习和研究的好帮手。", category: "productivity", price: "free", url: "https://perplexity.ai", rating: "4.8", domain: "perplexity.ai", features: ["AI搜索", "引用来源", "研究工具"], hot: true },
+            { name: "Perplexity", desc: "AI搜索引擎，引用来源，适合研究和信息查询。提供准确的答案和来源链接，是学习和研究的好帮手。", category: "productivity", price: "free", url: "https://perplexity.ai", rating: "4.8", domain: "perplexity.ai", features: ["AI搜索", "引用来源", "研究工具"], hot: true,
+            tutorial: {"tips":["所有答案都会引用来源，可以直接查看原始资料","使用 'Focus' 模式可以限定搜索范围","可以保存搜索结果到个人知识库"]}
+            }
             { name: "Otter.ai", desc: "语音转文字，会议记录，实时转录准确率高。支持多语言识别，自动生成会议摘要和要点。", category: "productivity", price: "free", url: "https://otter.ai", rating: "4.6", domain: "otter.ai", features: ["语音转文字", "会议记录", "多语言"] },
-            { name: "Gamma", desc: "AI生成演示文稿，设计美观，协作功能完善。支持文本生成PPT，提供多种精美模板，适合商务演示。", category: "productivity", price: "free", url: "https://gamma.app", rating: "4.7", domain: "gamma.app", features: ["AI生成PPT", "设计美观", "协作功能"] },
+            { name: "Gamma", desc: "AI生成演示文稿，设计美观，协作功能完善。支持文本生成PPT，提供多种精美模板，适合商务演示。", category: "productivity", price: "free", url: "https://gamma.app", rating: "4.7", domain: "gamma.app", features: ["AI生成PPT", "设计美观", "协作功能"],
+            tutorial: {"tips":["输入文档或大纲可以一键生成PPT","支持AI生成图表和配图","可以实时协作编辑"]}
+            }
             { name: "Tome", desc: "AI故事演示工具，适合创意展示和 pitch deck。自动生成故事板，支持实时协作，适合创业者和创意工作者。", category: "productivity", price: "free", url: "https://tome.app", rating: "4.5", domain: "tome.app", features: ["故事演示", "实时协作", "Pitch Deck"] },
             { name: "Mem.ai", desc: "AI知识管理工具，自动组织和关联笔记。智能整理信息，帮助构建个人知识库，适合知识工作者。", category: "productivity", price: "free", url: "https://mem.ai", rating: "4.4", domain: "mem.ai", features: ["知识管理", "自动整理", "笔记关联"] },
             
             // 音频处理
-            { name: "ElevenLabs", desc: "AI语音合成，质量极高，支持多种语言和情感。生成的语音自然逼真，几乎听不出是AI合成的。", category: "audio", price: "free", url: "https://elevenlabs.io", rating: "4.9", domain: "elevenlabs.io", features: ["语音合成", "多语言", "情感语音"], hot: true },
+            { name: "ElevenLabs", desc: "AI语音合成，质量极高，支持多种语言和情感。生成的语音自然逼真，几乎听不出是AI合成的。", category: "audio", price: "free", url: "https://elevenlabs.io", rating: "4.9", domain: "elevenlabs.io", features: ["语音合成", "多语言", "情感语音"], hot: true,
+            tutorial: {"tips":["可以克隆自己的声音用于配音","支持多种情感语调（开心、悲伤、愤怒等）","生成速度极快，几乎实时输出"]}
+            }
             { name: "Descript", desc: "音视频编辑一体化，文字编辑视频，功能强大。像编辑文档一样编辑视频，支持多轨道编辑和实时协作。", category: "audio", price: "paid", url: "https://descript.com", rating: "4.7", domain: "descript.com", features: ["文字编辑视频", "多轨道", "实时协作"] },
             { name: "Murf", desc: "专业AI配音工具，适合视频配音和有声书。提供120+种AI语音，支持多种情感和语调。", category: "audio", price: "paid", url: "https://murf.ai", rating: "4.5", domain: "murf.ai", features: ["120+语音", "情感语调", "专业配音"] },
             { name: "Whisper", desc: "OpenAI语音识别，开源免费，准确率高。支持多语言识别，适合字幕制作和会议记录。", category: "audio", price: "free", url: "https://openai.com/whisper", rating: "4.8", domain: "openai.com", features: ["语音识别", "多语言", "开源免费"] },
@@ -1434,19 +1464,31 @@
             { name: "通义灵码", desc: "阿里基于Qwen 2.5-Coder的AI编程助手，个人版完全免费。对Java/Go/Spring Boot等框架代码补全精准，支持本地工程问答，阿里云生态深度集成。", category: "code", price: "free", url: "https://tongyi.aliyun.com/lingma", rating: "4.6", domain: "aliyun.com", features: ["Java/Go补全", "免费使用", "阿里集成"] },
             { name: "文心快码", desc: "百度推出的AI编程工具，主打SPEC规范驱动开发模式。通过Doc→Code的白盒化流程降低幻觉风险，特别适合C++/C#及复杂业务系统开发。", category: "code", price: "free", url: "https://comate.baidu.com", rating: "4.4", domain: "baidu.com", features: ["SPEC驱动", "白盒化", "C++/C#"] },
             { name: "海螺AI", desc: "字节跳动旗下AI助手，主打视频创作过程中的交互感。将文案创作与视觉特效生成有机结合，兼顾集成度与生成质量稳定性。", category: "video", price: "free", url: "https://hailuoai.com", rating: "4.3", domain: "hailuoai.com", features: ["视频创作", "文案特效", "字节出品"] },
-            { name: "Claude 4.0", desc: "Anthropic推出的最新Claude模型，支持200万Token上下文，具备更强的多模态能力和推理能力。", category: "productivity", price: "按Token计费", url: "https://www.anthropic.com/claude", rating: "4.9", domain: "anthropic.com", features: ["200万上下文", "多模态", "强推理"], hot: true, new: true },
-            { name: "v0.dev", desc: "Vercel推出的AI UI生成工具，通过自然语言描述生成React组件，支持Tailwind CSS，设计系统级组件。", category: "code", price: "免费", url: "https://v0.dev", rating: "4.8", domain: "v0.dev", features: ["UI生成", "React组件", "Tailwind CSS"], hot: true, new: true },
+            { name: "Claude 4.0", desc: "Anthropic推出的最新Claude模型，支持200万Token上下文，具备更强的多模态能力和推理能力。", category: "productivity", price: "按Token计费", url: "https://www.anthropic.com/claude", rating: "4.9", domain: "anthropic.com", features: ["200万上下文", "多模态", "强推理"], hot: true, new: true,
+            tutorial: {"tips":["支持200万Token超长上下文，分析整本PDF","多模态能力更强，可以理解复杂图表","推理能力提升，适合解决复杂问题"]}
+            }
+            { name: "v0.dev", desc: "Vercel推出的AI UI生成工具，通过自然语言描述生成React组件，支持Tailwind CSS，设计系统级组件。", category: "code", price: "免费", url: "https://v0.dev", rating: "4.8", domain: "v0.dev", features: ["UI生成", "React组件", "Tailwind CSS"], hot: true, new: true,
+            tutorial: {"tips":["专门用于生成React组件","支持Tailwind CSS样式","生成的组件可以直接复制到项目中"]}
+            }
             { name: "AutoGPT Next", desc: "AutoGPT的升级版本，支持更强大的任务规划和执行能力，可自主完成复杂的工作流程。", category: "productivity", price: "免费", url: "https://autogpt.net", rating: "4.7", domain: "autogpt.net", features: ["任务规划", "工作流程", "自主执行"], new: true },
-            { name: "OpenAI o1", desc: "OpenAI推出的推理模型，擅长复杂问题解决，支持链式思维，在数学和编程任务上表现出色。", category: "productivity", price: "按Token计费", url: "https://openai.com/o1", rating: "4.9", domain: "openai.com", features: ["复杂推理", "链式思维", "数学编程"], hot: true, new: true },
+            { name: "OpenAI o1", desc: "OpenAI推出的推理模型，擅长复杂问题解决，支持链式思维，在数学和编程任务上表现出色。", category: "productivity", price: "按Token计费", url: "https://openai.com/o1", rating: "4.9", domain: "openai.com", features: ["复杂推理", "链式思维", "数学编程"], hot: true, new: true,
+            tutorial: {"tips":["擅长数学和编程推理问题","会自动进行链式思考，展示推理过程","适合需要深度分析的任务"]}
+            }
             { name: "Supabase AI", desc: "Supabase的AI助手，支持自然语言生成SQL查询、数据库优化和API设计，让开发更高效。", category: "code", price: "免费", url: "https://supabase.com/ai", rating: "4.7", domain: "supabase.com", features: ["SQL生成", "数据库优化", "API设计"], new: true },
-            { name: "Lovable", desc: "AI全栈开发平台，可以快速构建和部署完整的Web应用，支持Next.js和Supabase，5分钟内上线产品。", category: "code", price: "免费版可用", url: "https://lovable.dev", rating: "4.7", domain: "lovable.dev", features: ["全栈开发", "快速部署", "Next.js支持"], hot: true, new: true },
+            { name: "Lovable", desc: "AI全栈开发平台，可以快速构建和部署完整的Web应用，支持Next.js和Supabase，5分钟内上线产品。", category: "code", price: "免费版可用", url: "https://lovable.dev", rating: "4.7", domain: "lovable.dev", features: ["全栈开发", "快速部署", "Next.js支持"], hot: true, new: true,
+            tutorial: {"tips":["5分钟内可以生成完整的Web应用","支持Next.js和Supabase","可以直接部署到Vercel"]}
+            }
             { name: "Linear AI", desc: "项目管理工具Linear的AI助手，支持智能任务分配、进度预测和优先级排序，提升团队效率。", category: "productivity", price: "付费", url: "https://linear.app/ai", rating: "4.8", domain: "linear.app", features: ["任务分配", "进度预测", "优先级排序"], new: true },
-            { name: "Cursor 2.0", desc: "新一代AI代码编辑器，支持MCP协议，可深度集成多种AI模型，提供智能代码生成、重构和调试功能，被誉为VS Code的AI升级版。", category: "code", price: "免费版可用，Pro版$20/月", url: "https://cursor.sh", rating: "4.9", domain: "cursor.sh", features: ["MCP协议支持", "多模型集成", "智能重构"], hot: true, new: true },
+            { name: "Cursor 2.0", desc: "新一代AI代码编辑器，支持MCP协议，可深度集成多种AI模型，提供智能代码生成、重构和调试功能，被誉为VS Code的AI升级版。", category: "code", price: "免费版可用，Pro版$20/月", url: "https://cursor.sh", rating: "4.9", domain: "cursor.sh", features: ["MCP协议支持", "多模型集成", "智能重构"], hot: true, new: true,
+            tutorial: {"tips":["支持MCP协议，可以深度集成多种AI模型","可以同时使用GPT-4和Claude","智能重构功能可以优化代码结构"]}
+            }
             { name: "Suno v4", desc: "2025年推出的AI音乐生成模型，支持多语言歌词创作，音乐质量大幅提升，可生成专业级歌曲。", category: "audio", price: "免费版可用，Pro版$10/月", url: "https://suno.com", rating: "4.8", domain: "suno.com", features: ["多语言歌词", "专业级音质", "快速生成"], hot: true, new: true },
             { name: "Udio v2", desc: "AI音乐创作平台，支持多种音乐风格，可以生成完整的歌曲，包括歌词、旋律和编曲。", category: "audio", price: "免费版可用", url: "https://www.udio.com", rating: "4.7", domain: "udio.com", features: ["多种风格", "完整歌曲", "智能编曲"], new: true },
             { name: "Fireworks AI", desc: "高性能AI推理平台，提供快速、低成本的模型托管服务，支持自定义模型部署。", category: "code", price: "按使用计费", url: "https://fireworks.ai", rating: "4.6", domain: "fireworks.ai", features: ["快速推理", "低成本", "自定义部署"], new: true },
             { name: "Replit AI 2.0", desc: "Replit的AI编程助手升级版，支持多文件编辑、测试生成和代码审查，适合完整项目开发。", category: "code", price: "免费版可用", url: "https://replit.com/ai", rating: "4.7", domain: "replit.com", features: ["多文件编辑", "测试生成", "代码审查"], new: true },
-            { name: "Bolt.new", desc: "StackBlitz推出的AI全栈开发平台，一句话即可生成完整Web应用，支持实时预览和部署，零配置开发。", category: "code", price: "免费版可用", url: "https://bolt.new", rating: "4.8", domain: "bolt.new", features: ["全栈生成", "实时预览", "一键部署"], hot: true, new: true },
+            { name: "Bolt.new", desc: "StackBlitz推出的AI全栈开发平台，一句话即可生成完整Web应用，支持实时预览和部署，零配置开发。", category: "code", price: "免费版可用", url: "https://bolt.new", rating: "4.8", domain: "bolt.new", features: ["全栈生成", "实时预览", "一键部署"], hot: true, new: true,
+            tutorial: {"tips":["用自然语言描述网站功能即可生成","支持实时预览和部署","生成的代码可以下载到本地"]}
+            }
             { name: "Stable Diffusion 3", desc: "Stability AI推出的新一代图像生成模型，支持更高分辨率和更精细的细节，文字生成能力大幅提升。", category: "image", price: "免费开源", url: "https://stability.ai", rating: "4.8", domain: "stability.ai", features: ["高分辨率", "精细细节", "文字生成"], hot: true, new: true },
             { name: "Midjourney v7", desc: "Midjourney最新版本，支持更自然的风格、更好的提示词理解和更快的生成速度。", category: "image", price: "$10-120/月", url: "https://midjourney.com", rating: "4.9", domain: "midjourney.com", features: ["自然风格", "提示词理解", "快速生成"], hot: true, new: true }
         ];
