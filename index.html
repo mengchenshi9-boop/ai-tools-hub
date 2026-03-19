@@ -357,6 +357,39 @@
             gap: 16px;
         }
         
+        .search-box {
+            position: relative;
+            flex: 1;
+            max-width: 300px;
+            margin: 0 20px;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 10px 40px 10px 15px;
+            border: 2px solid var(--border);
+            border-radius: 25px;
+            font-size: 14px;
+            background: var(--bg-white);
+            color: var(--text-primary);
+            transition: all 0.3s;
+        }
+        
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+        }
+        
+        .search-box .search-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 16px;
+            pointer-events: none;
+        }
+        
         .theme-toggle {
             width: 44px;
             height: 44px;
@@ -1217,6 +1250,10 @@
                 <span>🤖</span>
                 海梦的AI工具宝库
             </a>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="搜索AI工具..." oninput="searchTools(this.value)">
+                <span class="search-icon">🔍</span>
+            </div>
             <div class="header-right">
                 <button class="theme-toggle" id="themeToggle" title="切换夜间模式">
                     <span class="theme-icon">🌙</span>
@@ -1355,6 +1392,24 @@
     </footer>
     
     <script>
+        // 搜索功能
+        function searchTools(keyword) {
+            const cards = document.querySelectorAll('.tool-card');
+            const searchTerm = keyword.toLowerCase().trim();
+            
+            cards.forEach(card => {
+                const name = card.querySelector('.tool-name').textContent.toLowerCase();
+                const desc = card.querySelector('.tool-desc').textContent.toLowerCase();
+                const category = card.querySelector('.tool-category').textContent.toLowerCase();
+                
+                if (searchTerm === '' || name.includes(searchTerm) || desc.includes(searchTerm) || category.includes(searchTerm)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+        
         const tools = [
             // AI聊天
             { name: "ChatGPT", desc: "OpenAI的旗舰对话模型，支持多模态交互，目前最强大的通用AI助手。支持文本、图像输入，能够回答问题、编写代码、分析文档等多种任务。", category: "chat", price: "free", url: "https://chat.openai.com", rating: "4.9", domain: "chat.openai.com", hot: true, userRating: 4.8, userVotes: 1523 },
