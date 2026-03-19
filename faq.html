@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常见问题 - 海梦的AI工具宝库</title>
+    <meta name="description" content="海梦的AI工具宝库常见问题解答">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ai-tools-hub.vercel.app/faq.html">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        
+        .faq-section {
+            margin-bottom: 30px;
+        }
+        
+        .faq-section-title {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #333;
+            transition: background 0.3s;
+        }
+        
+        .faq-question:hover {
+            background: #f8f9fa;
+        }
+        
+        .faq-icon {
+            font-size: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        
+        .faq-answer-content {
+            padding: 0 20px 20px;
+            color: #666;
+        }
+        
+        .faq-answer-content a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .faq-answer-content a:hover {
+            text-decoration: underline;
+        }
+        
+        .search-box {
+            margin-bottom: 30px;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .contact-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .contact-box h3 {
+            margin-bottom: 10px;
+        }
+        
+        .contact-box a {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 28px;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← 返回首页</a>
+        
+        <h1>❓ 常见问题</h1>
+        <p class="subtitle">关于海梦的AI工具宝库的常见问题解答</p>
+        
+        <div class="search-box">
+            <input type="text" class="search-input" id="faqSearch" placeholder="搜索问题..." onkeyup="filterFAQ()">
+        </div>
+        
+        <div class="faq-section">
+            <h2 class="faq-section-title">💡 基础问题</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>海梦的AI工具宝库是什么？</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        海梦的AI工具宝库是一个精选AI工具导航网站，收录了79个最热门的人工智能工具，包括AI聊天、图像生成、视频编辑、编程开发等多个分类。每个工具都有详细的功能介绍、使用教程和用户评分，帮助您快速找到最适合的AI工具。
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>网站上的工具都是免费的吗？</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        网站上的工具分为免费和付费两种。免费工具完全免费使用，付费工具需要订阅或付费后才能使用全部功能。每个工具页面都标注了价格类型，您可以自行选择。
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>如何搜索特定的AI工具？</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        您可以使用首页的搜索框，输入工具名称或关键词来搜索。也可以通过分类导航来浏览特定类别的工具。
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq-section">
+            <h2 class="faq-section-title">⭐ 功能使用</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>如何收藏喜欢的工具？</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        每个工具卡片上都有一个小爱心按钮（🤍），点击即可收藏。收藏后会变成红色（❤️）。收藏的工具有什么用？您可以随时在首页快速访问您的常用工具。收藏数据保存在您的浏览器中，无需登录。
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>如何对比多个工具？</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        点击工具卡片上的"+对比"按钮，最多可以添加4个工具进行对比。对比功能会展示各个工具的分类、价格、评分、核心功能等信息，方便您做出选择。
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>如何切换中英文？</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        点击页面右上角的语言切换按钮（🇨🇳 中文 / 🇺🇸 English）即可切换语言。您的语言偏好会自动保存，下次访问时自动应用。
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>如何使用工具评分功能？</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        进入任意工具详情页，向下滚动找到"用户评分"区域，点击星星进行评分（1-5星），还可以填写评论。评分会保存到您的浏览器中。
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq-section">
+            <h2 class="faq-section-title">🤝 合作相关</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>如何在网站上推广我们的AI工具？</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        您可以通过以下方式合作：
+                        <br>- <a href="contact.html">联系我们</a> 洽谈广告投放
+                        <br>- 申请加入我们的工具列表
+                        <br>- 提供工具评测和推广内容
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>如何提交新的AI工具？</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        访问<a href="submit.html">提交工具</a>页面，填写工具的基本信息、功能特点等。我们会在1-3个工作日内审核，审核通过后会展示在网站上。
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq-section">
+            <h2 class="faq-section-title">🔧 技术问题</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>网站加载很慢怎么办？</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        建议您：
+                        <br>- 清除浏览器缓存
+                        <br>- 使用Chrome或Edge浏览器
+                        <br>- 检查网络连接
+                        <br>- 关闭不必要的浏览器插件
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>深色模式在哪里开启？</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        点击页面右上角的月亮图标（🌙）即可切换深色/浅色模式。您的偏好会自动保存，下次访问时自动应用。
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-box">
+            <h3>还有其他问题？</h3>
+            <p>联系我们：<a href="mailto:contact@ai-tools-hub.vercel.app">contact@ai-tools-hub.vercel.app</a></p>
+        </div>
+    </div>
+    
+    <script>
+        function toggleFAQ(element) {
+            const item = element.parentElement;
+            item.classList.toggle('active');
+        }
+        
+        function filterFAQ() {
+            const searchText = document.getElementById('faqSearch').value.toLowerCase();
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question span').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer-content').textContent.toLowerCase();
+                
+                if (question.includes(searchText) || answer.includes(searchText)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

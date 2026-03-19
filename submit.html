@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>提交工具 - 海梦的AI工具宝库</title>
+    <meta name="description" content="提交您发现的AI工具到海梦的AI工具宝库">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ai-tools-hub.vercel.app/submit.html">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 32px;
+            text-align: center;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .form-section {
+            margin-bottom: 30px;
+        }
+        
+        .form-section h2 {
+            color: #667eea;
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .form-group label .required {
+            color: #ff4757;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-group .hint {
+            font-size: 12px;
+            color: #999;
+            margin-top: 5px;
+        }
+        
+        .category-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .category-tag {
+            padding: 8px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        
+        .category-tag:hover {
+            border-color: #667eea;
+        }
+        
+        .category-tag.selected {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .success-message.show {
+            display: block;
+        }
+        
+        .success-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+        
+        .steps {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .steps h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 0;
+        }
+        
+        .step-number {
+            width: 30px;
+            height: 30px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← 返回首页</a>
+        
+        <h1>📮 提交AI工具</h1>
+        <p class="subtitle">推荐你认为优秀的AI工具，让更多人发现！</p>
+        
+        <div class="steps">
+            <h3>📝 提交流程</h3>
+            <div class="step">
+                <span class="step-number">1</span>
+                <span>填写工具基本信息</span>
+            </div>
+            <div class="step">
+                <span class="step-number">2</span>
+                <span>描述工具功能和特点</span>
+            </div>
+            <div class="step">
+                <span class="step-number">3</span>
+                <span>提交后1-3个工作日内审核</span>
+            </div>
+            <div class="step">
+                <span class="step-number">4</span>
+                <span>审核通过后展示在网站</span>
+            </div>
+        </div>
+        
+        <form id="submitForm">
+            <div class="form-section">
+                <h2>📌 基本信息</h2>
+                
+                <div class="form-group">
+                    <label>工具名称 <span class="required">*</span></label>
+                    <input type="text" id="toolName" required placeholder="例如：ChatGPT">
+                </div>
+                
+                <div class="form-group">
+                    <label>官方网址 <span class="required">*</span></label>
+                    <input type="url" id="toolUrl" required placeholder="https://...">
+                </div>
+                
+                <div class="form-group">
+                    <label>工具分类 <span class="required">*</span></label>
+                    <div class="category-tags" id="categoryTags">
+                        <span class="category-tag" data-value="chat">AI聊天</span>
+                        <span class="category-tag" data-value="image">图片生成</span>
+                        <span class="category-tag" data-value="video">视频编辑</span>
+                        <span class="category-tag" data-value="code">编程开发</span>
+                        <span class="category-tag" data-value="writing">写作助手</span>
+                        <span class="category-tag" data-value="productivity">效率工具</span>
+                        <span class="category-tag" data-value="audio">音频处理</span>
+                        <span class="category-tag" data-value="design">设计工具</span>
+                        <span class="category-tag" data-value="business">商业办公</span>
+                    </div>
+                    <input type="hidden" id="toolCategory" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>价格类型 <span class="required">*</span></label>
+                    <select id="toolPrice" required>
+                        <option value="">请选择</option>
+                        <option value="free">完全免费</option>
+                        <option value="freemium">免费+付费</option>
+                        <option value="paid">付费订阅</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h2>📝 详细介绍</h2>
+                
+                <div class="form-group">
+                    <label>工具简介 <span class="required">*</span></label>
+                    <textarea id="toolDesc" required placeholder="用几句话介绍这个工具的主要功能和特点..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>核心功能</label>
+                    <textarea id="toolFeatures" placeholder="列出工具的主要功能点，每行一个"></textarea>
+                    <p class="hint">每行一个功能点，例如：支持多语言聊天、代码生成能力</p>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h2>👤 您的信息</h2>
+                
+                <div class="form-group">
+                    <label>您的昵称</label>
+                    <input type="text" id="submitterName" placeholder="方便我们联系您">
+                </div>
+                
+                <div class="form-group">
+                    <label>邮箱 <span class="required">*</span></label>
+                    <input type="email" id="submitterEmail" required placeholder="用于审核通知">
+                </div>
+                
+                <div class="form-group">
+                    <label>备注</label>
+                    <textarea id="submitterNote" placeholder="其他想告诉我们的信息"></textarea>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">🚀 提交工具</button>
+        </form>
+        
+        <div class="success-message" id="successMessage">
+            <div class="success-icon">🎉</div>
+            <h2>提交成功！</h2>
+            <p>感谢您的提交！我们将在1-3个工作日内完成审核。</p>
+            <p>审核结果将通过邮件通知您。</p>
+            <br>
+            <a href="index.html" class="back-link">返回首页</a>
+        </div>
+    </div>
+    
+    <script>
+        // 分类选择
+        document.querySelectorAll('.category-tag').forEach(tag => {
+            tag.addEventListener('click', () => {
+                document.querySelectorAll('.category-tag').forEach(t => t.classList.remove('selected'));
+                tag.classList.add('selected');
+                document.getElementById('toolCategory').value = tag.dataset.value;
+            });
+        });
+        
+        // 表单提交
+        document.getElementById('submitForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('toolName').value,
+                url: document.getElementById('toolUrl').value,
+                category: document.getElementById('toolCategory').value,
+                price: document.getElementById('toolPrice').value,
+                desc: document.getElementById('toolDesc').value,
+                features: document.getElementById('toolFeatures').value,
+                submitter: {
+                    name: document.getElementById('submitterName').value,
+                    email: document.getElementById('submitterEmail').value,
+                    note: document.getElementById('submitterNote').value
+                },
+                submitTime: new Date().toISOString()
+            };
+            
+            // 保存到localStorage（实际项目中应该发送到服务器）
+            const submissions = JSON.parse(localStorage.getItem('toolSubmissions') || '[]');
+            submissions.push(formData);
+            localStorage.setItem('toolSubmissions', JSON.stringify(submissions));
+            
+            // 显示成功消息
+            document.getElementById('submitForm').style.display = 'none';
+            document.getElementById('successMessage').classList.add('show');
+        });
+    </script>
+</body>
+</html>

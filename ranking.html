@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>排行榜 - 海梦的AI工具宝库</title>
+    <meta name="description" content="AI工具排行榜 - 最热门、最受欢迎的工具排名">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ai-tools-hub.vercel.app/ranking.html">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            padding: 12px 24px;
+            border: none;
+            background: white;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .tab-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .tab-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .ranking-list {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .ranking-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.3s;
+        }
+        
+        .ranking-item:last-child {
+            border-bottom: none;
+        }
+        
+        .ranking-item:hover {
+            background: #f8f9fa;
+        }
+        
+        .ranking-rank {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .ranking-rank.gold {
+            background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%);
+            color: white;
+            border-radius: 12px;
+        }
+        
+        .ranking-rank.silver {
+            background: linear-gradient(135deg, #c0c0c0 0%, #a0a0a0 100%);
+            color: white;
+            border-radius: 12px;
+        }
+        
+        .ranking-rank.bronze {
+            background: linear-gradient(135deg, #cd7f32 0%, #b87333 100%);
+            color: white;
+            border-radius: 12px;
+        }
+        
+        .ranking-rank.normal {
+            color: #999;
+            font-size: 18px;
+        }
+        
+        .ranking-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .ranking-info {
+            flex: 1;
+        }
+        
+        .ranking-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .ranking-desc {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        
+        .ranking-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 13px;
+            color: #999;
+        }
+        
+        .ranking-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .ranking-action {
+            margin-left: 20px;
+        }
+        
+        .visit-btn {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        
+        .visit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 36px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .ranking-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .ranking-rank {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .ranking-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .ranking-meta {
+                justify-content: center;
+            }
+            
+            .ranking-action {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← 返回首页</a>
+        
+        <h1>🏆 AI工具排行榜</h1>
+        <p class="subtitle">精选最热门、最受欢迎的AI工具</p>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">79</div>
+                <div class="stat-label">收录工具</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">10</div>
+                <div class="stat-label">工具分类</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">功能覆盖</div>
+            </div>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('rating')">⭐ 评分最高</button>
+            <button class="tab-btn" onclick="switchTab('popular')">🔥 最热门</button>
+            <button class="tab-btn" onclick="switchTab('new')">🆕 最新收录</button>
+            <button class="tab-btn" onclick="switchTab('free')">🆓 免费工具</button>
+        </div>
+        
+        <div class="ranking-list" id="rankingList">
+            <!-- 排行榜内容将通过JavaScript动态生成 -->
+        </div>
+    </div>
+    
+    <script>
+        const rankingData = {
+            rating: [
+                { name: "ChatGPT", desc: "OpenAI的旗舰对话模型，最强大的通用AI助手", category: "chat", rating: 4.9, users: "1亿+", price: "免费", url: "https://chat.openai.com", icon: "🤖" },
+                { name: "Claude", desc: "Anthropic的AI助手，擅长长文本处理和代码编写", category: "chat", rating: 4.8, users: "5000万+", price: "免费", url: "https://claude.ai", icon: "🧠" },
+                { name: "Midjourney", desc: "高质量AI图像生成，艺术风格多样", category: "image", rating: 4.9, users: "1500万+", price: "付费", url: "https://midjourney.com", icon: "🎨" },
+                { name: "Cursor", desc: "AI原生代码编辑器，编程效率倍增", category: "code", rating: 4.9, users: "500万+", price: "免费", url: "https://cursor.sh", icon: "💻" },
+                { name: "Figma AI", desc: "设计协作工具，AI辅助设计建议", category: "design", rating: 4.9, users: "300万+", price: "免费", url: "https://figma.com", icon: "✏️" },
+                { name: "ElevenLabs", desc: "AI语音合成，质量极高", category: "audio", rating: 4.9, users: "100万+", price: "免费", url: "https://elevenlabs.io", icon: "🎤" },
+                { name: "Runway", desc: "AI视频生成和编辑工具", category: "video", rating: 4.9, users: "1000万+", price: "付费", url: "https://runwayml.com", icon: "🎬" },
+                { name: "Perplexity", desc: "AI搜索引擎，引用来源", category: "productivity", rating: 4.8, users: "500万+", price: "免费", url: "https://perplexity.ai", icon: "🔍" },
+                { name: "Grammarly", desc: "语法检查和写作优化", category: "writing", rating: 4.8, users: "3000万+", price: "免费", url: "https://grammarly.com", icon: "✍️" },
+                { name: "Hugging Face", desc: "AI模型社区，托管数万个开源模型", category: "code", rating: 4.8, users: "200万+", price: "免费", url: "https://huggingface.co", icon: "🤗" }
+            ],
+            popular: [
+                { name: "ChatGPT", desc: "OpenAI的旗舰对话模型，最强大的通用AI助手", category: "chat", rating: 4.9, users: "1亿+", price: "免费", url: "https://chat.openai.com", icon: "🤖" },
+                { name: "Midjourney", desc: "高质量AI图像生成，艺术风格多样", category: "image", rating: 4.9, users: "1500万+", price: "付费", url: "https://midjourney.com", icon: "🎨" },
+                { name: "Grammarly", desc: "语法检查和写作优化", category: "writing", rating: 4.8, users: "3000万+", price: "免费", url: "https://grammarly.com", icon: "✍️" },
+                { name: "GitHub Copilot", desc: "AI代码补全，提高开发效率", category: "code", rating: 4.8, users: "1亿+", price: "付费", url: "https://github.com/features/copilot", icon: "👨‍💻" },
+                { name: "Canva AI", desc: "AI设计工具，海报logo一键生成", category: "design", rating: 4.8, users: "1亿+", price: "免费", url: "https://canva.com", icon: "🎭" },
+                { name: "CapCut", desc: "字节跳动AI剪辑，功能强大", category: "video", rating: 4.8, users: "2亿+", price: "免费", url: "https://www.capcut.com", icon: "✂️" },
+                { name: "Claude", desc: "Anthropic的AI助手，擅长长文本处理", category: "chat", rating: 4.8, users: "5000万+", price: "免费", url: "https://claude.ai", icon: "🧠" },
+                { name: "Runway", desc: "AI视频生成和编辑工具", category: "video", rating: 4.9, users: "1000万+", price: "付费", url: "https://runwayml.com", icon: "🎬" },
+                { name: "Gemini", desc: "Google的AI助手，多模态能力强", category: "chat", rating: 4.7, users: "5000万+", price: "免费", url: "https://gemini.google.com", icon: "🌟" },
+                { name: "Perplexity", desc: "AI搜索引擎，引用来源", category: "productivity", rating: 4.8, users: "500万+", price: "免费", url: "https://perplexity.ai", icon: "🔍" }
+            ],
+            new: [
+                { name: "Cursor 2.0", desc: "新一代AI代码编辑器，支持MCP协议", category: "code", rating: 4.9, users: "50万+", price: "免费", url: "https://cursor.sh", icon: "💻" },
+                { name: "Bolt.new", desc: "一句话生成完整Web应用", category: "code", rating: 4.8, users: "30万+", price: "免费", url: "https://bolt.new", icon: "⚡" },
+                { name: "v0.dev", desc: "Vercel AI UI生成工具", category: "code", rating: 4.8, users: "20万+", price: "免费", url: "https://v0.dev", icon: "🎯" },
+                { name: "Lovable", desc: "AI全栈开发平台，5分钟上线产品", category: "code", rating: 4.7, users: "15万+", price: "免费", url: "https://lovable.dev", icon: "💝" },
+                { name: "Suno v4", desc: "AI音乐生成，专业级歌曲", category: "audio", rating: 4.8, users: "100万+", price: "免费", url: "https://suno.com", icon: "🎵" },
+                { name: "Claude 4.0", desc: "支持200万Token上下文", category: "chat", rating: 4.9, users: "100万+", price: "付费", url: "https://www.anthropic.com/claude", icon: "🧠" },
+                { name: "OpenAI o1", desc: "OpenAI推理模型，擅长复杂问题", category: "productivity", rating: 4.9, users: "50万+", price: "付费", url: "https://openai.com/o1", icon: "🧮" },
+                { name: "Seedance 2.0", desc: "字节跳动AI视频生成", category: "video", rating: 4.7, users: "10万+", price: "付费", url: "https://www.volcengine.com/seedance", icon: "🌊" },
+                { name: "秘塔AI搜索", desc: "中国版Perplexity，月活千万", category: "productivity", rating: 4.6, users: "1000万+", price: "免费", url: "https://metaso.cn", icon: "🔎" },
+                { name: "可灵AI", desc: "快手AI视频生成，国产顶尖", category: "video", rating: 4.5, users: "100万+", price: "付费", url: "https://kling.kuaishou.com", icon: "🔔" }
+            ],
+            free: [
+                { name: "ChatGPT", desc: "OpenAI的旗舰对话模型", category: "chat", rating: 4.9, users: "1亿+", price: "免费", url: "https://chat.openai.com", icon: "🤖" },
+                { name: "Claude", desc: "Anthropic的AI助手", category: "chat", rating: 4.8, users: "5000万+", price: "免费", url: "https://claude.ai", icon: "🧠" },
+                { name: "Gemini", desc: "Google的AI助手", category: "chat", rating: 4.7, users: "5000万+", price: "免费", url: "https://gemini.google.com", icon: "🌟" },
+                { name: "Kimi", desc: "支持200万字上下文", category: "chat", rating: 4.7, users: "3000万+", price: "免费", url: "https://kimi.moonshot.cn", icon: "🌙" },
+                { name: "通义千问", desc: "阿里大模型", category: "chat", rating: 4.6, users: "2000万+", price: "免费", url: "https://tongyi.aliyun.com", icon: "🐘" },
+                { name: "Stable Diffusion", desc: "开源图像生成模型", category: "image", rating: 4.7, users: "3000万+", price: "免费", url: "https://stability.ai", icon: "🌀" },
+                { name: "Grammarly", desc: "语法检查和写作优化", category: "writing", rating: 4.8, users: "3000万+", price: "免费", url: "https://grammarly.com", icon: "✍️" },
+                { name: "Hugging Face", desc: "AI模型社区", category: "code", rating: 4.8, users: "200万+", price: "免费", url: "https://huggingface.co", icon: "🤗" },
+                { name: "Perplexity", desc: "AI搜索引擎", category: "productivity", rating: 4.8, users: "500万+", price: "免费", url: "https://perplexity.ai", icon: "🔍" },
+                { name: "CapCut", desc: "AI剪辑工具", category: "video", rating: 4.8, users: "2亿+", price: "免费", url: "https://www.capcut.com", icon: "✂️" }
+            ]
+        };
+        
+        function getRankClass(index) {
+            if (index === 0) return 'gold';
+            if (index === 1) return 'silver';
+            if (index === 2) return 'bronze';
+            return 'normal';
+        }
+        
+        function renderRanking(type) {
+            const list = rankingData[type];
+            const container = document.getElementById('rankingList');
+            
+            container.innerHTML = list.map((tool, index) => `
+                <div class="ranking-item">
+                    <div class="ranking-rank ${getRankClass(index)}">${index + 1}</div>
+                    <div class="ranking-icon">${tool.icon}</div>
+                    <div class="ranking-info">
+                        <div class="ranking-name">${tool.name}</div>
+                        <div class="ranking-desc">${tool.desc}</div>
+                        <div class="ranking-meta">
+                            <span>⭐ ${tool.rating}</span>
+                            <span>👥 ${tool.users}</span>
+                            <span>${tool.price === '免费' ? '🆓' : '💰'} ${tool.price}</span>
+                        </div>
+                    </div>
+                    <div class="ranking-action">
+                        <a href="${tool.url}" target="_blank" class="visit-btn">访问</a>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function switchTab(type) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            renderRanking(type);
+        }
+        
+        // 默认加载评分排行
+        renderRanking('rating');
+    </script>
+</body>
+</html>
