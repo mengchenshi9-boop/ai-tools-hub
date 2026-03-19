@@ -1680,6 +1680,44 @@
         </div>
     </section>
     
+    <style>
+        /* 双语文本样式 */
+        .i18n-zh { display: inline; }
+        .i18n-en { display: none; }
+        
+        [lang="en"] .i18n-zh { display: none; }
+        [lang="en"] .i18n-en { display: inline; }
+        
+        /* 语言切换器 */
+        .language-switcher {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        
+        .lang-btn {
+            padding: 8px 16px;
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+    </style>
+    
     <footer>
         <div class="footer-content">
             <div class="footer-logo">🤖 海梦的AI工具宝库</div>
@@ -2278,6 +2316,71 @@
             themeIcon.textContent = isDark ? '☀️' : '🌙';
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
         });
+        
+        // 语言切换功能
+        const langBtns = document.querySelectorAll('.lang-btn');
+        const html = document.documentElement;
+        
+        // 从 localStorage 读取保存的语言偏好
+        const savedLang = localStorage.getItem('preferredLanguage') || 'zh';
+        html.lang = savedLang;
+        updateLanguageButtons(savedLang);
+        
+        // 语言切换事件
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.dataset.lang;
+                html.lang = lang;
+                localStorage.setItem('preferredLanguage', lang);
+                updateLanguageButtons(lang);
+                updateContentLanguage(lang);
+                showToast(`已切换到${lang === 'zh' ? '中文' : 'English'}`);
+            });
+        });
+        
+        function updateLanguageButtons(lang) {
+            langBtns.forEach(btn => {
+                if (btn.dataset.lang === lang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+        
+        function updateContentLanguage(lang) {
+            // 更新搜索框占位符
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) {
+                searchInput.placeholder = lang === 'zh' ? '搜索AI工具...' : 'Search AI tools...';
+            }
+            
+            // 更新工具数量显示
+            const totalToolsEl = document.getElementById('totalTools');
+            if (totalToolsEl) {
+                totalToolsEl.textContent = lang === 'zh' ? '79个工具' : '79 Tools';
+            }
+            
+            // 更新页脚链接
+            updateFooterLinks(lang);
+        }
+        
+        function updateFooterLinks(lang) {
+            const footerLinks = document.querySelectorAll('.footer-links a');
+            const footerTexts = {
+                zh: ["首页", "工具详情", "隐私政策", "使用条款", "联系我们"],
+                en: ["Home", "Tools", "Privacy", "Terms", "Contact"]
+            };
+            
+            footerLinks.forEach((link, index) => {
+                if (footerTexts[lang][index]) {
+                    link.textContent = footerTexts[lang][index];
+                }
+            });
+        }
+        
+        // 初始化时更新内容
+        updateContentLanguage(savedLang);
         
         // 初始化
         renderRanking();
