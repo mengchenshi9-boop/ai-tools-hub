@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+
+    <!-- 性能优化：DNS预解析 -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="//giscus.app">
+    
+    <!-- 性能优化：预连接 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- 性能优化：预加载关键资源 -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style">
+    
+    <!-- 性能优化：模块化JS -->
+    <link rel="modulepreload" href="index.html">
+    
+
     <meta charset="UTF-8">
 
     <meta name="keywords" content="AI工具,ChatGPT,Claude,Midjourney,Stable Diffusion,AI聊天,图像生成,视频编辑,编程开发,AI助手,人工智能工具,AI工具导航,AI工具推荐">
@@ -20,6 +38,13 @@
     <meta name="description" content="海梦的AI工具宝库 - 收录79个精选AI工具，包括ChatGPT、Claude、Midjourney等热门工具。支持AI聊天、图像生成、视频编辑、编程开发等分类，每个工具都有详细的功能介绍和使用教程。帮助你快速找到最适合的AI工具，提升工作效率。">
     <meta name="author" content="海梦的AI工具宝库">
     <meta name="robots" content="index, follow">
+    
+    <!-- PWA支持 -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="AI工具宝库">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
