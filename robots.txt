@@ -1,13 +1,5 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
+Disallow: /api/
 
 Sitemap: https://ai-tools-hub.vercel.app/sitemap.xml
-
-# 禁止爬取特定目录
-Disallow: /admin/
-Disallow: /private/
-Disallow: /*.json$
-
-# 爬取延迟（可选）
-Crawl-delay: 1

@@ -7,12 +7,6 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://ai-tools-hub.vercel.app/index.html</loc>
-        <lastmod>2026-03-19</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
         <loc>https://ai-tools-hub.vercel.app/privacy.html</loc>
         <lastmod>2026-03-19</lastmod>
         <changefreq>monthly</changefreq>
@@ -29,24 +23,6 @@
         <lastmod>2026-03-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://ai-tools-hub.vercel.app/submit.html</loc>
-        <lastmod>2026-03-19</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://ai-tools-hub.vercel.app/faq.html</loc>
-        <lastmod>2026-03-19</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://ai-tools-hub.vercel.app/ranking.html</loc>
-        <lastmod>2026-03-19</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://ai-tools-hub.vercel.app/404.html</loc>
