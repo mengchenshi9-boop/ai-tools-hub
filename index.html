@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>海梦的AI工具宝库 | 发现最好的AI工具</title>
-    <meta name="description" content="海梦的AI工具宝库，收录全网最热门的AI工具，包括AI聊天、图片生成、视频编辑、编程开发等50+工具，每天自动更新。帮助你找到最适合的AI助手，提升工作效率。">
+    <meta name="description" content="海梦的AI工具宝库，收录全网最热门的AI工具，包括AI聊天、图片生成、视频编辑、编程开发等70+工具，每天自动更新。帮助你找到最适合的AI助手，提升工作效率。">
     <meta name="keywords" content="AI工具,AI聊天,ChatGPT,Claude,Midjourney,AI图片生成,AI视频编辑,AI编程助手,AI写作,效率工具">
     <meta name="author" content="海梦的AI工具宝库">
     <meta name="robots" content="index, follow">
@@ -13,14 +13,14 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ai-tools-hub.vercel.app/">
     <meta property="og:title" content="海梦的AI工具宝库 | 发现最好的AI工具">
-    <meta property="og:description" content="收录全网最热门的AI工具，包括AI聊天、图片生成、视频编辑、编程开发等50+工具，每天自动更新。">
+    <meta property="og:description" content="收录全网最热门的AI工具，包括AI聊天、图片生成、视频编辑、编程开发等70+工具，每天自动更新。">
     <meta property="og:image" content="https://ai-tools-hub.vercel.app/og-image.png">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://ai-tools-hub.vercel.app/">
     <meta property="twitter:title" content="海梦的AI工具宝库 | 发现最好的AI工具">
-    <meta property="twitter:description" content="收录全网最热门的AI工具，包括AI聊天、图片生成、视频编辑、编程开发等50+工具，每天自动更新。">
+    <meta property="twitter:description" content="收录全网最热门的AI工具，包括AI聊天、图片生成、视频编辑、编程开发等70+工具，每天自动更新。">
     <meta property="twitter:image" content="https://ai-tools-hub.vercel.app/og-image.png">
     
     <!-- Favicon -->
@@ -1314,7 +1314,7 @@
             <p>已收录全网最热门的AI工具，每天自动更新。帮助你找到最适合的AI助手，提升工作效率。</p>
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <span class="hero-stat-number" id="totalTools">50+</span>
+                    <span class="hero-stat-number" id="totalTools">70+</span>
                     <span class="hero-stat-label">精选工具</span>
                 </div>
                 <div class="hero-stat">
@@ -1505,7 +1505,38 @@
             { name: "Hugging Face", desc: "AI模型社区，托管数万个开源模型，支持在线试用和下载部署。", category: "code", price: "free", url: "https://huggingface.co", rating: "4.8", domain: "huggingface.co", features: ["模型社区", "在线试用", "下载部署"], hot: true },
             { name: "Jasper AI", desc: "AI营销文案生成工具，适合广告和社交媒体内容，支持品牌语调自定义。", category: "writing", price: "paid", url: "https://jasper.ai", rating: "4.5", domain: "jasper.ai", features: ["营销文案", "品牌语调", "广告生成"] },
             { name: "RunwayML", desc: "AI视频生成和编辑工具，支持文字生成视频、图片生成视频，专业级质量。", category: "video", price: "paid", url: "https://runwayml.com", rating: "4.8", domain: "runwayml.com", features: ["文字生成视频", "图片生成视频", "专业级"] },
-            { name: "Playground AI", desc: "免费AI图像生成工具，支持多种模型，包括Stable Diffusion和DALL-E。", category: "image", price: "free", url: "https://playgroundai.com", rating: "4.6", domain: "playgroundai.com", features: ["多模型支持", "SD+DALL-E", "免费使用"] }
+            { name: "Playground AI", desc: "免费AI图像生成工具，支持多种模型，包括Stable Diffusion和DALL-E。", category: "image", price: "free", url: "https://playgroundai.com", rating: "4.6", domain: "playgroundai.com", features: ["多模型支持", "SD+DALL-E", "免费使用"] },
+            { name: "Claude 4.0", desc: "Anthropic推出的最新Claude模型，支持200万Token上下文，具备更强的多模态能力和推理能力。", category: "productivity", price: "按Token计费", url: "https://www.anthropic.com/claude", rating: "4.9", domain: "anthropic.com", features: ["200万上下文", "多模态", "强推理"], hot: true, new: true },
+            { name: "Fireworks AI", desc: "高性能AI推理平台，提供快速、低成本的模型托管服务，支持自定义模型部署。", category: "code", price: "按使用计费", url: "https://fireworks.ai", rating: "4.6", domain: "fireworks.ai", features: ["快速推理", "低成本", "自定义部署"], new: true },
+            { name: "OpenAI o1", desc: "OpenAI推出的推理模型，擅长复杂问题解决，支持链式思维，在数学和编程任务上表现出色。", category: "productivity", price: "按Token计费", url: "https://openai.com/o1", rating: "4.9", domain: "openai.com", features: ["复杂推理", "链式思维", "数学编程"], hot: true, new: true },
+            
+            // 恢复被删除的工具
+            { name: "AutoGPT Next", desc: "AutoGPT的升级版本，支持更强大的任务规划和执行能力，可自主完成复杂的工作流程。", category: "productivity", price: "免费", url: "https://autogpt.net", rating: "4.7", domain: "autogpt.net", features: ["任务规划", "工作流程", "自主执行"], new: true, tutorial: {"tips":["支持更强大的任务规划能力","可以自主完成复杂的工作流程","无需用户持续监督"]}},
+            { name: "Bolt.new", desc: "StackBlitz推出的AI全栈开发平台，一句话即可生成完整Web应用，支持实时预览和部署，零配置开发。", category: "code", price: "免费版可用", url: "https://bolt.new", rating: "4.8", domain: "bolt.new", features: ["全栈生成", "实时预览", "一键部署"], hot: true, new: true, tutorial: {"tips":["用自然语言描述网站功能即可生成","支持实时预览和部署","生成的代码可以下载到本地"]}},
+            { name: "Cursor 2.0", desc: "新一代AI代码编辑器，支持MCP协议，可深度集成多种AI模型，提供智能代码生成、重构和调试功能，被誉为VS Code的AI升级版。", category: "code", price: "免费版可用，Pro版$20/月", url: "https://cursor.sh", rating: "4.9", domain: "cursor.sh", features: ["MCP协议支持", "多模型集成", "智能重构"], hot: true, new: true, tutorial: {"tips":["支持MCP协议，可以深度集成多种AI模型","可以同时使用GPT-4和Claude","智能重构功能可以优化代码结构"]}},
+            { name: "Linear AI", desc: "项目管理工具Linear的AI助手，支持智能任务分配、进度预测和优先级排序，提升团队效率。", category: "productivity", price: "付费", url: "https://linear.app/ai", rating: "4.8", domain: "linear.app", features: ["任务分配", "进度预测", "优先级排序"], new: true, tutorial: {"tips":["支持智能任务分配","可以预测项目进度","自动进行优先级排序"]}},
+            { name: "Lovable", desc: "AI全栈开发平台，可以快速构建和部署完整的Web应用，支持Next.js和Supabase，5分钟内上线产品。", category: "code", price: "免费版可用", url: "https://lovable.dev", rating: "4.7", domain: "lovable.dev", features: ["全栈开发", "快速部署", "Next.js支持"], hot: true, new: true, tutorial: {"tips":["5分钟内可以生成完整的Web应用","支持Next.js和Supabase","可以直接部署到Vercel"]}},
+            { name: "Manus", desc: "全球首款通用AI Agent产品，由Monica公司推出（2025年3月）。可自主完成复杂任务如撰写报告、制作表格、网站建设等，无需用户持续监督，云端独立运行。", category: "productivity", price: "paid", url: "https://manus.im", rating: "4.6", domain: "manus.im", features: ["通用Agent", "云端运行", "复杂任务"], hot: true, tutorial: {"tips":["通用AI Agent，适用性广","云端独立运行，无需本地资源","可自主完成多步骤任务"]}},
+            { name: "Midjourney v7", desc: "Midjourney最新版本，支持更自然的风格、更好的提示词理解和更快的生成速度。", category: "image", price: "$10-120/月", url: "https://midjourney.com", rating: "4.9", domain: "midjourney.com", features: ["自然风格", "提示词理解", "快速生成"], hot: true, new: true, tutorial: {"tips":["风格更自然逼真","提示词理解能力更强","生成速度更快"]}},
+            { name: "Nano Banana Pro", desc: "Google推出的AI图像生成工具，是Gemini 3 Pro的图像生成能力。2025-2026年重大更新，在人物、物件一致性方面取得突破，多轮编辑仍能保持人物特征。", category: "image", price: "free", url: "https://aistudio.google.com", rating: "4.5", domain: "aistudio.google.com", features: ["人物一致性", "多轮编辑", "Gemini集成"], new: true, tutorial: {"tips":["人物、物件一致性表现突出","支持多轮编辑，保持特征","Gemini 3 Pro驱动，效果出色"]}},
+            { name: "NotebookLM", desc: "Google推出的AI知识管理工具，2024年底正式产品化，2025年重大升级。由Gemini 3.1 Pro驱动，支持PDF/YouTube/Google Docs分析，Audio Overview功能可将文档转为双人播客。", category: "productivity", price: "free", url: "https://notebooklm.google.com", rating: "4.7", domain: "notebooklm.google.com", features: ["PDF分析", "Audio Overview", "知识管理"], tutorial: {"tips":["支持PDF、YouTube、Google Docs分析","Audio Overview可生成播客","由Gemini 3.1 Pro驱动"]}},
+            { name: "OpenCode", desc: "开源AI编程助手，2025年6月发布，支持75+大模型，采用MIT协议。专为终端环境设计，提供TUI界面，支持代码生成、补全、调试、重构等功能，可本地部署保护隐私。被誉为Claude Code最佳开源平替。", category: "code", price: "free", url: "https://github.com/sst/opencode", rating: "4.8", domain: "github.com", features: ["开源", "75+模型", "TUI界面"], new: true, tutorial: {"tips":["支持75+大模型，选择丰富","TUI界面，终端用户友好","完全开源，可本地部署"]}},
+            { name: "Replit AI 2.0", desc: "Replit的AI编程助手升级版，支持多文件编辑、测试生成和代码审查，适合完整项目开发。", category: "code", price: "免费版可用", url: "https://replit.com/ai", rating: "4.7", domain: "replit.com", features: ["多文件编辑", "测试生成", "代码审查"], new: true, tutorial: {"tips":["支持多文件编辑","自动生成测试","适合完整项目开发"]}},
+            { name: "Seedance 2.0", desc: "字节跳动2026年发布的AI视频生成模型，支持480P/720P输出，帧率24fps。多模态输入支持文本、图像、视频、音频参考，成品可用率达90%，被誉为导演级AI。", category: "video", price: "paid", url: "https://www.volcengine.com/seedance", rating: "4.7", domain: "volcengine.com", features: ["480P/720P", "多模态输入", "导演级"], new: true, tutorial: {"tips":["支持480P/720P输出，适合短视频","多模态输入，包括文本、图像、视频","成品可用率高达90%"]}},
+            { name: "Stable Diffusion 3", desc: "Stability AI推出的新一代图像生成模型，支持更高分辨率和更精细的细节，文字生成能力大幅提升。", category: "image", price: "免费开源", url: "https://stability.ai", rating: "4.8", domain: "stability.ai", features: ["高分辨率", "精细细节", "文字生成"], hot: true, new: true, tutorial: {"tips":["支持更高分辨率输出","细节更精细","文字生成能力大幅提升"]}},
+            { name: "Suno v4", desc: "2025年推出的AI音乐生成模型，支持多语言歌词创作，音乐质量大幅提升，可生成专业级歌曲。", category: "audio", price: "免费版可用，Pro版$10/月", url: "https://suno.com", rating: "4.8", domain: "suno.com", features: ["多语言歌词", "专业级音质", "快速生成"], hot: true, new: true, tutorial: {"tips":["音乐质量大幅提升","支持多语言歌词创作","可生成专业级歌曲"]}},
+            { name: "Supabase AI", desc: "Supabase的AI助手，支持自然语言生成SQL查询、数据库优化和API设计，让开发更高效。", category: "code", price: "免费", url: "https://supabase.com/ai", rating: "4.7", domain: "supabase.com", features: ["SQL生成", "数据库优化", "API设计"], new: true, tutorial: {"tips":["支持自然语言生成SQL查询","可以优化数据库性能","自动生成API设计"]}},
+            { name: "Udio v2", desc: "AI音乐创作平台，支持多种音乐风格，可以生成完整的歌曲，包括歌词、旋律和编曲。", category: "audio", price: "免费版可用", url: "https://www.udio.com", rating: "4.7", domain: "udio.com", features: ["多种风格", "完整歌曲", "智能编曲"], new: true},
+            { name: "v0.dev", desc: "Vercel推出的AI UI生成工具，通过自然语言描述生成React组件，支持Tailwind CSS，设计系统级组件。", category: "code", price: "免费", url: "https://v0.dev", rating: "4.8", domain: "v0.dev", features: ["UI生成", "React组件", "Tailwind CSS"], hot: true, new: true, tutorial: {"tips":["专门用于生成React组件","支持Tailwind CSS样式","生成的组件可以直接复制到项目中"]}},
+            { name: "即梦AI", desc: "字节跳动旗下AI创意平台，主打低门槛视觉表达。输入简单描述即可产出电影级图像或短视频，已接入Seedance技术，适合创意内容生产者。", category: "image", price: "free", url: "https://jimeng.jianying.com", rating: "4.5", domain: "jianying.com", features: ["低门槛", "图像视频", "字节技术"], new: true, tutorial: {"tips":["低门槛，输入描述即可生成","已接入Seedance技术","适合创意内容生产者"]}},
+            { name: "可灵AI", desc: "快手推出的AI视频生成工具，在物理真实感上表现惊艳。代表国产AI视频生成顶尖水准，可一键生成长视频并自带基础剪辑逻辑。", category: "video", price: "paid", url: "https://kling.kuaishou.com", rating: "4.5", domain: "kuaishou.com", features: ["物理真实感", "长视频", "国产顶尖"], hot: true, tutorial: {"tips":["物理真实感表现惊艳","可一键生成长视频","代表国产AI视频顶尖水准"]}},
+            { name: "天工AI", desc: "昆仑万维推出的AI搜索工具，将搜索、写作、文档分析整合一体化。2025年持续迭代，适合需要搜资料又需要即时产出的复合任务用户。", category: "productivity", price: "free", url: "https://www.tiangong.cn", rating: "4.3", domain: "tiangong.cn", features: ["搜索写作一体", "文档分析", "中文优化"], tutorial: {"tips":["搜索、写作、文档分析一体化","适合复合任务用户","2025年持续迭代更新"]}},
+            { name: "文心快码", desc: "百度推出的AI编程工具，主打SPEC规范驱动开发模式。通过Doc→Code的白盒化流程降低幻觉风险，特别适合C++/C#及复杂业务系统开发。", category: "code", price: "free", url: "https://comate.baidu.com", rating: "4.4", domain: "baidu.com", features: ["SPEC驱动", "白盒化", "C++/C#"], tutorial: {"tips":["SPEC规范驱动开发","降低代码幻觉风险","适合C++/C#及复杂业务"]}},
+            { name: "海螺AI", desc: "字节跳动旗下AI助手，主打视频创作过程中的交互感。将文案创作与视觉特效生成有机结合，兼顾集成度与生成质量稳定性。", category: "video", price: "free", url: "https://hailuoai.com", rating: "4.3", domain: "hailuoai.com", features: ["视频创作", "文案特效", "字节出品"], tutorial: {"tips":["主打视频创作交互感","文案创作与视觉特效结合","兼顾集成度和稳定性"]}},
+            { name: "秘塔AI搜索", desc: "上海秘塔网络科技推出的AI搜索引擎（2025年），被誉为中国版Perplexity。提供简洁/深入/学术三种模式，深度研究功能免费开放，月活用户破千万，市场占比57.7%。", category: "productivity", price: "free", url: "https://metaso.cn", rating: "4.6", domain: "metaso.cn", features: ["简洁/深入/学术", "免费研究", "月活千万"], hot: true, tutorial: {"tips":["提供三种模式：简洁、深入、学术","深度研究功能免费开放","月活用户破千万，口碑好"]}},
+            { name: "红鸦AI", desc: "2026年新兴图文创作工具，一句话生成整套小红书图文。支持批量产出风格统一的9张配图+标题+正文，一键发布，5分钟内完成整个流程。", category: "productivity", price: "paid", url: "https://hy.ithinkai.cn", rating: "4.4", domain: "ithinkai.cn", features: ["小红书图文", "批量生成", "一键发布"], tutorial: {"tips":["一句话生成整套小红书图文","批量产出风格统一内容","5分钟内完成整个流程"]}},
+            { name: "讯飞智文", desc: "科大讯飞推出的PPT生成AI，根据长文稿或音视频直接生成PPT大纲，自动匹配专业排版设计。结构化排版能力突出，适合职场人士。", category: "productivity", price: "free", url: "https://zhiwen.xfyun.cn", rating: "4.4", domain: "xfyun.cn", features: ["PPT生成", "大纲自动", "排版设计"], tutorial: {"tips":["长文稿或音视频直接生成PPT","自动匹配专业排版设计","适合职场人士使用"]}},
+            { name: "通义灵码", desc: "阿里基于Qwen 2.5-Coder的AI编程助手，个人版完全免费。对Java/Go/Spring Boot等框架代码补全精准，支持本地工程问答，阿里云生态深度集成。", category: "code", price: "free", url: "https://tongyi.aliyun.com/lingma", rating: "4.6", domain: "aliyun.com", features: ["Java/Go补全", "免费使用", "阿里集成"], tutorial: {"tips":["个人版完全免费","Java/Go/Spring等框架补全精准","支持本地工程问答"]}}
         ];
         
         let currentCategory = 'all';
